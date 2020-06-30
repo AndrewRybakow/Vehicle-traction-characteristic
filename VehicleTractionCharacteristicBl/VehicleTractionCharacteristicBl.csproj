@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\EngineController.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Characteristic.cs" />
     <Compile Include="Model\Engine.cs" />
@@ -59,9 +60,7 @@
     <Compile Include="Model\VTCContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
