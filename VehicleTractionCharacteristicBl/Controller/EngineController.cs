@@ -3,7 +3,7 @@ using VehicleTractionCharacteristicBl.Model;
 
 namespace VehicleTractionCharacteristicBl.Controller
 {
-    class EngineController
+    public class EngineController
     {
         // Maximum engine frequency
         int MaxFrequency { get; }

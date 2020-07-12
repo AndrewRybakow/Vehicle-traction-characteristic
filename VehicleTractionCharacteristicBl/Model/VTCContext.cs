@@ -2,7 +2,7 @@
 
 namespace VehicleTractionCharacteristicBl.Model
 {
-    class VTCContext : DbContext
+    public class VTCContext : DbContext
     {
         public VTCContext() : base("VTCConnection") { }
 

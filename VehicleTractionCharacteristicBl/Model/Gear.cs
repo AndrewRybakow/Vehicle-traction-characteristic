@@ -2,7 +2,7 @@
 
 namespace VehicleTractionCharacteristicBl.Model
 {
-    class Gear
+    public class Gear
     {
         public int GearId { get; set; }
 

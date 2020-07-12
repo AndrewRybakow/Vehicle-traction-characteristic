@@ -1,6 +1,6 @@
 ﻿namespace VehicleTractionCharacteristicBl.Model
 {
-    class Characteristic
+    public class Characteristic
     {
         public int CharacteristicId { get; set; }
 
