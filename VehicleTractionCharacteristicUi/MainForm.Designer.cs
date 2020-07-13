@@ -385,6 +385,7 @@
             this.btnSaveExcelExternalCharacteristic.TabIndex = 1;
             this.btnSaveExcelExternalCharacteristic.Text = "Сохранить в Excel";
             this.btnSaveExcelExternalCharacteristic.UseVisualStyleBackColor = true;
+            this.btnSaveExcelExternalCharacteristic.Click += new System.EventHandler(this.btnSaveExcelExternalCharacteristic_Click);
             // 
             // btnOpenExcelExternalCharacteristic
             // 
@@ -452,7 +453,7 @@
             title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             title1.Name = "Frequency";
-            title1.Text = "Частота вращения коленвала, об/мин";
+            title1.Text = "Частота вращения коленчатого вала, об/мин";
             title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
             title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             title2.Name = "Power";
@@ -505,7 +506,7 @@
             title3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             title3.Name = "Frequency";
-            title3.Text = "Частота вращения коленвала, об/мин";
+            title3.Text = "Частота вращения коленчатого вала, об/мин";
             title4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
             title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             title4.Name = "Torque";
@@ -558,7 +559,7 @@
             title5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             title5.Name = "Frequency";
-            title5.Text = "Частота вращения коленчатього вала, об/мин";
+            title5.Text = "Частота вращения коленчатого вала, об/мин";
             title6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
             title6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             title6.Name = "Consumption";
