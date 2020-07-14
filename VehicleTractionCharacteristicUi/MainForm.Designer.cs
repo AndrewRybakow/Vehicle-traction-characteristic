@@ -71,7 +71,6 @@
             this.txtFrequencyMaxTorque = new System.Windows.Forms.TextBox();
             this.grpExternalCharacteristic = new System.Windows.Forms.GroupBox();
             this.btnSaveExcelExternalCharacteristic = new System.Windows.Forms.Button();
-            this.btnOpenExcelExternalCharacteristic = new System.Windows.Forms.Button();
             this.tabExternalCharacteristic = new System.Windows.Forms.TabControl();
             this.tpPower = new System.Windows.Forms.TabPage();
             this.chrtPower = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -79,6 +78,31 @@
             this.chrtTorque = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tpConsumption = new System.Windows.Forms.TabPage();
             this.chrtConsumption = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.grpVehicleCharacteristic = new System.Windows.Forms.GroupBox();
+            this.tlpVehicleCharacteristic = new System.Windows.Forms.TableLayoutPanel();
+            this.lblFinalDriveRatio = new System.Windows.Forms.Label();
+            this.txtFinalDriveRatio = new System.Windows.Forms.TextBox();
+            this.lblWeightOnWheels = new System.Windows.Forms.Label();
+            this.txtWeightOnWheels = new System.Windows.Forms.TextBox();
+            this.lblWheelRadius = new System.Windows.Forms.Label();
+            this.txtWheelRadius = new System.Windows.Forms.TextBox();
+            this.lblCoefOfTransEfficiency = new System.Windows.Forms.Label();
+            this.txtCoefOfTransEfficiency = new System.Windows.Forms.TextBox();
+            this.grpTransferBox = new System.Windows.Forms.GroupBox();
+            this.rdoTransferBoxNo = new System.Windows.Forms.RadioButton();
+            this.rdoTransferBoxYes = new System.Windows.Forms.RadioButton();
+            this.grpTransferBoxGearRatio = new System.Windows.Forms.GroupBox();
+            this.tlpTransferBoxGearRatio = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTransferBoxTopGearRatio = new System.Windows.Forms.Label();
+            this.lblTransferBoxLowerGearRatio = new System.Windows.Forms.Label();
+            this.txtTransferBoxTopGearRatio = new System.Windows.Forms.TextBox();
+            this.txtTransferBoxLowerGearRatio = new System.Windows.Forms.TextBox();
+            this.grpGearboxCharacteristic = new System.Windows.Forms.GroupBox();
+            this.grpGearRatioInGearbox = new System.Windows.Forms.GroupBox();
+            this.flpGearRatioInGearbox = new System.Windows.Forms.FlowLayoutPanel();
+            this.grpGearsInGearbox = new System.Windows.Forms.GroupBox();
+            this.btnDeleteGearInGearbox = new System.Windows.Forms.Button();
+            this.btnAddGearToGearbox = new System.Windows.Forms.Button();
             this.grpModelStep.SuspendLayout();
             this.tlpModelStep.SuspendLayout();
             this.grpInitialData.SuspendLayout();
@@ -92,6 +116,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.chrtTorque)).BeginInit();
             this.tpConsumption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtConsumption)).BeginInit();
+            this.grpVehicleCharacteristic.SuspendLayout();
+            this.tlpVehicleCharacteristic.SuspendLayout();
+            this.grpTransferBox.SuspendLayout();
+            this.grpTransferBoxGearRatio.SuspendLayout();
+            this.tlpTransferBoxGearRatio.SuspendLayout();
+            this.grpGearboxCharacteristic.SuspendLayout();
+            this.grpGearRatioInGearbox.SuspendLayout();
+            this.grpGearsInGearbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpModelStep
@@ -157,6 +189,10 @@
             // 
             // grpInitialData
             // 
+            this.grpInitialData.Controls.Add(this.grpGearboxCharacteristic);
+            this.grpInitialData.Controls.Add(this.grpTransferBoxGearRatio);
+            this.grpInitialData.Controls.Add(this.grpTransferBox);
+            this.grpInitialData.Controls.Add(this.grpVehicleCharacteristic);
             this.grpInitialData.Controls.Add(this.btnCalculate);
             this.grpInitialData.Controls.Add(this.grpEngineCharacteristic);
             this.grpInitialData.Location = new System.Drawing.Point(10, 94);
@@ -179,7 +215,7 @@
             // grpEngineCharacteristic
             // 
             this.grpEngineCharacteristic.Controls.Add(this.tlpEngineCharacteristic);
-            this.grpEngineCharacteristic.Location = new System.Drawing.Point(9, 24);
+            this.grpEngineCharacteristic.Location = new System.Drawing.Point(46, 24);
             this.grpEngineCharacteristic.Name = "grpEngineCharacteristic";
             this.grpEngineCharacteristic.Size = new System.Drawing.Size(455, 254);
             this.grpEngineCharacteristic.TabIndex = 6;
@@ -368,7 +404,6 @@
             // grpExternalCharacteristic
             // 
             this.grpExternalCharacteristic.Controls.Add(this.btnSaveExcelExternalCharacteristic);
-            this.grpExternalCharacteristic.Controls.Add(this.btnOpenExcelExternalCharacteristic);
             this.grpExternalCharacteristic.Controls.Add(this.tabExternalCharacteristic);
             this.grpExternalCharacteristic.Location = new System.Drawing.Point(10, 464);
             this.grpExternalCharacteristic.Name = "grpExternalCharacteristic";
@@ -379,22 +414,13 @@
             // 
             // btnSaveExcelExternalCharacteristic
             // 
-            this.btnSaveExcelExternalCharacteristic.Location = new System.Drawing.Point(336, 434);
+            this.btnSaveExcelExternalCharacteristic.Location = new System.Drawing.Point(436, 436);
             this.btnSaveExcelExternalCharacteristic.Name = "btnSaveExcelExternalCharacteristic";
             this.btnSaveExcelExternalCharacteristic.Size = new System.Drawing.Size(114, 23);
             this.btnSaveExcelExternalCharacteristic.TabIndex = 1;
             this.btnSaveExcelExternalCharacteristic.Text = "Сохранить в Excel";
             this.btnSaveExcelExternalCharacteristic.UseVisualStyleBackColor = true;
             this.btnSaveExcelExternalCharacteristic.Click += new System.EventHandler(this.btnSaveExcelExternalCharacteristic_Click);
-            // 
-            // btnOpenExcelExternalCharacteristic
-            // 
-            this.btnOpenExcelExternalCharacteristic.Location = new System.Drawing.Point(456, 434);
-            this.btnOpenExcelExternalCharacteristic.Name = "btnOpenExcelExternalCharacteristic";
-            this.btnOpenExcelExternalCharacteristic.Size = new System.Drawing.Size(97, 23);
-            this.btnOpenExcelExternalCharacteristic.TabIndex = 1;
-            this.btnOpenExcelExternalCharacteristic.Text = "Открыть в Excel";
-            this.btnOpenExcelExternalCharacteristic.UseVisualStyleBackColor = true;
             // 
             // tabExternalCharacteristic
             // 
@@ -567,6 +593,261 @@
             this.chrtConsumption.Titles.Add(title5);
             this.chrtConsumption.Titles.Add(title6);
             // 
+            // grpVehicleCharacteristic
+            // 
+            this.grpVehicleCharacteristic.Controls.Add(this.tlpVehicleCharacteristic);
+            this.grpVehicleCharacteristic.Location = new System.Drawing.Point(549, 24);
+            this.grpVehicleCharacteristic.Name = "grpVehicleCharacteristic";
+            this.grpVehicleCharacteristic.Size = new System.Drawing.Size(341, 132);
+            this.grpVehicleCharacteristic.TabIndex = 9;
+            this.grpVehicleCharacteristic.TabStop = false;
+            this.grpVehicleCharacteristic.Text = "Характеристики автомобиля:";
+            // 
+            // tlpVehicleCharacteristic
+            // 
+            this.tlpVehicleCharacteristic.ColumnCount = 2;
+            this.tlpVehicleCharacteristic.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.44343F));
+            this.tlpVehicleCharacteristic.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.55658F));
+            this.tlpVehicleCharacteristic.Controls.Add(this.lblFinalDriveRatio, 0, 3);
+            this.tlpVehicleCharacteristic.Controls.Add(this.txtFinalDriveRatio, 1, 3);
+            this.tlpVehicleCharacteristic.Controls.Add(this.lblWeightOnWheels, 0, 0);
+            this.tlpVehicleCharacteristic.Controls.Add(this.txtWeightOnWheels, 1, 0);
+            this.tlpVehicleCharacteristic.Controls.Add(this.lblWheelRadius, 0, 1);
+            this.tlpVehicleCharacteristic.Controls.Add(this.txtWheelRadius, 1, 1);
+            this.tlpVehicleCharacteristic.Controls.Add(this.lblCoefOfTransEfficiency, 0, 2);
+            this.tlpVehicleCharacteristic.Controls.Add(this.txtCoefOfTransEfficiency, 1, 2);
+            this.tlpVehicleCharacteristic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpVehicleCharacteristic.Location = new System.Drawing.Point(3, 16);
+            this.tlpVehicleCharacteristic.Name = "tlpVehicleCharacteristic";
+            this.tlpVehicleCharacteristic.RowCount = 4;
+            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpVehicleCharacteristic.Size = new System.Drawing.Size(335, 113);
+            this.tlpVehicleCharacteristic.TabIndex = 0;
+            // 
+            // lblFinalDriveRatio
+            // 
+            this.lblFinalDriveRatio.AutoSize = true;
+            this.lblFinalDriveRatio.Location = new System.Drawing.Point(3, 89);
+            this.lblFinalDriveRatio.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblFinalDriveRatio.Name = "lblFinalDriveRatio";
+            this.lblFinalDriveRatio.Size = new System.Drawing.Size(208, 13);
+            this.lblFinalDriveRatio.TabIndex = 4;
+            this.lblFinalDriveRatio.Text = "Передаточное число главной передачи:";
+            // 
+            // txtFinalDriveRatio
+            // 
+            this.txtFinalDriveRatio.Location = new System.Drawing.Point(222, 87);
+            this.txtFinalDriveRatio.Name = "txtFinalDriveRatio";
+            this.txtFinalDriveRatio.Size = new System.Drawing.Size(100, 20);
+            this.txtFinalDriveRatio.TabIndex = 5;
+            // 
+            // lblWeightOnWheels
+            // 
+            this.lblWeightOnWheels.AutoSize = true;
+            this.lblWeightOnWheels.Location = new System.Drawing.Point(3, 5);
+            this.lblWeightOnWheels.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblWeightOnWheels.Name = "lblWeightOnWheels";
+            this.lblWeightOnWheels.Size = new System.Drawing.Size(212, 13);
+            this.lblWeightOnWheels.TabIndex = 6;
+            this.lblWeightOnWheels.Text = "Вес на ведущих колёсах автомобиля, Н:";
+            // 
+            // txtWeightOnWheels
+            // 
+            this.txtWeightOnWheels.Location = new System.Drawing.Point(222, 3);
+            this.txtWeightOnWheels.Name = "txtWeightOnWheels";
+            this.txtWeightOnWheels.Size = new System.Drawing.Size(100, 20);
+            this.txtWeightOnWheels.TabIndex = 7;
+            // 
+            // lblWheelRadius
+            // 
+            this.lblWheelRadius.AutoSize = true;
+            this.lblWheelRadius.Location = new System.Drawing.Point(3, 33);
+            this.lblWheelRadius.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblWheelRadius.Name = "lblWheelRadius";
+            this.lblWheelRadius.Size = new System.Drawing.Size(99, 13);
+            this.lblWheelRadius.TabIndex = 1;
+            this.lblWheelRadius.Text = "Радиус колеса, м:";
+            // 
+            // txtWheelRadius
+            // 
+            this.txtWheelRadius.Location = new System.Drawing.Point(222, 31);
+            this.txtWheelRadius.Name = "txtWheelRadius";
+            this.txtWheelRadius.Size = new System.Drawing.Size(100, 20);
+            this.txtWheelRadius.TabIndex = 3;
+            // 
+            // lblCoefOfTransEfficiency
+            // 
+            this.lblCoefOfTransEfficiency.AutoSize = true;
+            this.lblCoefOfTransEfficiency.Location = new System.Drawing.Point(3, 61);
+            this.lblCoefOfTransEfficiency.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblCoefOfTransEfficiency.Name = "lblCoefOfTransEfficiency";
+            this.lblCoefOfTransEfficiency.Size = new System.Drawing.Size(177, 13);
+            this.lblCoefOfTransEfficiency.TabIndex = 0;
+            this.lblCoefOfTransEfficiency.Text = "Коэффициент КПД трансмиссии:";
+            // 
+            // txtCoefOfTransEfficiency
+            // 
+            this.txtCoefOfTransEfficiency.Location = new System.Drawing.Point(222, 59);
+            this.txtCoefOfTransEfficiency.Name = "txtCoefOfTransEfficiency";
+            this.txtCoefOfTransEfficiency.Size = new System.Drawing.Size(100, 20);
+            this.txtCoefOfTransEfficiency.TabIndex = 2;
+            // 
+            // grpTransferBox
+            // 
+            this.grpTransferBox.Controls.Add(this.rdoTransferBoxNo);
+            this.grpTransferBox.Controls.Add(this.rdoTransferBoxYes);
+            this.grpTransferBox.Location = new System.Drawing.Point(549, 160);
+            this.grpTransferBox.Name = "grpTransferBox";
+            this.grpTransferBox.Size = new System.Drawing.Size(247, 42);
+            this.grpTransferBox.TabIndex = 11;
+            this.grpTransferBox.TabStop = false;
+            this.grpTransferBox.Text = "Раздаточная коробка:";
+            // 
+            // rdoTransferBoxNo
+            // 
+            this.rdoTransferBoxNo.AutoSize = true;
+            this.rdoTransferBoxNo.Location = new System.Drawing.Point(107, 19);
+            this.rdoTransferBoxNo.Name = "rdoTransferBoxNo";
+            this.rdoTransferBoxNo.Size = new System.Drawing.Size(87, 17);
+            this.rdoTransferBoxNo.TabIndex = 9;
+            this.rdoTransferBoxNo.TabStop = true;
+            this.rdoTransferBoxNo.Text = "Отсутствует";
+            this.rdoTransferBoxNo.UseVisualStyleBackColor = true;
+            // 
+            // rdoTransferBoxYes
+            // 
+            this.rdoTransferBoxYes.AutoSize = true;
+            this.rdoTransferBoxYes.Location = new System.Drawing.Point(7, 19);
+            this.rdoTransferBoxYes.Name = "rdoTransferBoxYes";
+            this.rdoTransferBoxYes.Size = new System.Drawing.Size(94, 17);
+            this.rdoTransferBoxYes.TabIndex = 8;
+            this.rdoTransferBoxYes.TabStop = true;
+            this.rdoTransferBoxYes.Text = "Присутствует";
+            this.rdoTransferBoxYes.UseVisualStyleBackColor = true;
+            // 
+            // grpTransferBoxGearRatio
+            // 
+            this.grpTransferBoxGearRatio.Controls.Add(this.tlpTransferBoxGearRatio);
+            this.grpTransferBoxGearRatio.Location = new System.Drawing.Point(549, 208);
+            this.grpTransferBoxGearRatio.Name = "grpTransferBoxGearRatio";
+            this.grpTransferBoxGearRatio.Size = new System.Drawing.Size(247, 70);
+            this.grpTransferBoxGearRatio.TabIndex = 12;
+            this.grpTransferBoxGearRatio.TabStop = false;
+            this.grpTransferBoxGearRatio.Text = "Передаточные числа раздаточной коробки:";
+            // 
+            // tlpTransferBoxGearRatio
+            // 
+            this.tlpTransferBoxGearRatio.ColumnCount = 2;
+            this.tlpTransferBoxGearRatio.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.22821F));
+            this.tlpTransferBoxGearRatio.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.77179F));
+            this.tlpTransferBoxGearRatio.Controls.Add(this.lblTransferBoxTopGearRatio, 0, 0);
+            this.tlpTransferBoxGearRatio.Controls.Add(this.lblTransferBoxLowerGearRatio, 0, 1);
+            this.tlpTransferBoxGearRatio.Controls.Add(this.txtTransferBoxTopGearRatio, 1, 0);
+            this.tlpTransferBoxGearRatio.Controls.Add(this.txtTransferBoxLowerGearRatio, 1, 1);
+            this.tlpTransferBoxGearRatio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTransferBoxGearRatio.Location = new System.Drawing.Point(3, 16);
+            this.tlpTransferBoxGearRatio.Name = "tlpTransferBoxGearRatio";
+            this.tlpTransferBoxGearRatio.RowCount = 2;
+            this.tlpTransferBoxGearRatio.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTransferBoxGearRatio.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTransferBoxGearRatio.Size = new System.Drawing.Size(241, 51);
+            this.tlpTransferBoxGearRatio.TabIndex = 0;
+            // 
+            // lblTransferBoxTopGearRatio
+            // 
+            this.lblTransferBoxTopGearRatio.AutoSize = true;
+            this.lblTransferBoxTopGearRatio.Location = new System.Drawing.Point(3, 5);
+            this.lblTransferBoxTopGearRatio.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblTransferBoxTopGearRatio.Name = "lblTransferBoxTopGearRatio";
+            this.lblTransferBoxTopGearRatio.Size = new System.Drawing.Size(101, 13);
+            this.lblTransferBoxTopGearRatio.TabIndex = 0;
+            this.lblTransferBoxTopGearRatio.Text = "Высшая передача:";
+            // 
+            // lblTransferBoxLowerGearRatio
+            // 
+            this.lblTransferBoxLowerGearRatio.AutoSize = true;
+            this.lblTransferBoxLowerGearRatio.Location = new System.Drawing.Point(3, 30);
+            this.lblTransferBoxLowerGearRatio.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblTransferBoxLowerGearRatio.Name = "lblTransferBoxLowerGearRatio";
+            this.lblTransferBoxLowerGearRatio.Size = new System.Drawing.Size(100, 13);
+            this.lblTransferBoxLowerGearRatio.TabIndex = 1;
+            this.lblTransferBoxLowerGearRatio.Text = "Низшая передача:";
+            // 
+            // txtTransferBoxTopGearRatio
+            // 
+            this.txtTransferBoxTopGearRatio.Location = new System.Drawing.Point(111, 3);
+            this.txtTransferBoxTopGearRatio.Name = "txtTransferBoxTopGearRatio";
+            this.txtTransferBoxTopGearRatio.Size = new System.Drawing.Size(100, 20);
+            this.txtTransferBoxTopGearRatio.TabIndex = 2;
+            // 
+            // txtTransferBoxLowerGearRatio
+            // 
+            this.txtTransferBoxLowerGearRatio.Location = new System.Drawing.Point(111, 28);
+            this.txtTransferBoxLowerGearRatio.Name = "txtTransferBoxLowerGearRatio";
+            this.txtTransferBoxLowerGearRatio.Size = new System.Drawing.Size(100, 20);
+            this.txtTransferBoxLowerGearRatio.TabIndex = 3;
+            // 
+            // grpGearboxCharacteristic
+            // 
+            this.grpGearboxCharacteristic.Controls.Add(this.grpGearRatioInGearbox);
+            this.grpGearboxCharacteristic.Controls.Add(this.grpGearsInGearbox);
+            this.grpGearboxCharacteristic.Location = new System.Drawing.Point(937, 24);
+            this.grpGearboxCharacteristic.Name = "grpGearboxCharacteristic";
+            this.grpGearboxCharacteristic.Size = new System.Drawing.Size(200, 254);
+            this.grpGearboxCharacteristic.TabIndex = 13;
+            this.grpGearboxCharacteristic.TabStop = false;
+            this.grpGearboxCharacteristic.Text = "Характиристики коробки передач:";
+            // 
+            // grpGearRatioInGearbox
+            // 
+            this.grpGearRatioInGearbox.Controls.Add(this.flpGearRatioInGearbox);
+            this.grpGearRatioInGearbox.Location = new System.Drawing.Point(6, 79);
+            this.grpGearRatioInGearbox.Name = "grpGearRatioInGearbox";
+            this.grpGearRatioInGearbox.Size = new System.Drawing.Size(188, 169);
+            this.grpGearRatioInGearbox.TabIndex = 11;
+            this.grpGearRatioInGearbox.TabStop = false;
+            this.grpGearRatioInGearbox.Text = "Передаточные числа передач:";
+            // 
+            // flpGearRatioInGearbox
+            // 
+            this.flpGearRatioInGearbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpGearRatioInGearbox.Location = new System.Drawing.Point(3, 16);
+            this.flpGearRatioInGearbox.Name = "flpGearRatioInGearbox";
+            this.flpGearRatioInGearbox.Size = new System.Drawing.Size(182, 150);
+            this.flpGearRatioInGearbox.TabIndex = 0;
+            // 
+            // grpGearsInGearbox
+            // 
+            this.grpGearsInGearbox.Controls.Add(this.btnDeleteGearInGearbox);
+            this.grpGearsInGearbox.Controls.Add(this.btnAddGearToGearbox);
+            this.grpGearsInGearbox.Location = new System.Drawing.Point(6, 19);
+            this.grpGearsInGearbox.Name = "grpGearsInGearbox";
+            this.grpGearsInGearbox.Size = new System.Drawing.Size(188, 54);
+            this.grpGearsInGearbox.TabIndex = 10;
+            this.grpGearsInGearbox.TabStop = false;
+            this.grpGearsInGearbox.Text = "Ступени коробки передач";
+            // 
+            // btnDeleteGearInGearbox
+            // 
+            this.btnDeleteGearInGearbox.Location = new System.Drawing.Point(102, 20);
+            this.btnDeleteGearInGearbox.Name = "btnDeleteGearInGearbox";
+            this.btnDeleteGearInGearbox.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteGearInGearbox.TabIndex = 11;
+            this.btnDeleteGearInGearbox.Text = "Удалить";
+            this.btnDeleteGearInGearbox.UseVisualStyleBackColor = true;
+            // 
+            // btnAddGearToGearbox
+            // 
+            this.btnAddGearToGearbox.Location = new System.Drawing.Point(12, 20);
+            this.btnAddGearToGearbox.Name = "btnAddGearToGearbox";
+            this.btnAddGearToGearbox.Size = new System.Drawing.Size(75, 23);
+            this.btnAddGearToGearbox.TabIndex = 10;
+            this.btnAddGearToGearbox.Text = "Добавить";
+            this.btnAddGearToGearbox.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,6 +876,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.chrtTorque)).EndInit();
             this.tpConsumption.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chrtConsumption)).EndInit();
+            this.grpVehicleCharacteristic.ResumeLayout(false);
+            this.tlpVehicleCharacteristic.ResumeLayout(false);
+            this.tlpVehicleCharacteristic.PerformLayout();
+            this.grpTransferBox.ResumeLayout(false);
+            this.grpTransferBox.PerformLayout();
+            this.grpTransferBoxGearRatio.ResumeLayout(false);
+            this.tlpTransferBoxGearRatio.ResumeLayout(false);
+            this.tlpTransferBoxGearRatio.PerformLayout();
+            this.grpGearboxCharacteristic.ResumeLayout(false);
+            this.grpGearRatioInGearbox.ResumeLayout(false);
+            this.grpGearsInGearbox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -628,7 +920,6 @@
         public System.Windows.Forms.TextBox txtFrequencyMaxTorque;
         private System.Windows.Forms.GroupBox grpExternalCharacteristic;
         private System.Windows.Forms.Button btnSaveExcelExternalCharacteristic;
-        private System.Windows.Forms.Button btnOpenExcelExternalCharacteristic;
         private System.Windows.Forms.TabControl tabExternalCharacteristic;
         private System.Windows.Forms.TabPage tpPower;
         private System.Windows.Forms.TabPage tpTorque;
@@ -637,6 +928,31 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chrtPower;
         private System.Windows.Forms.DataVisualization.Charting.Chart chrtTorque;
         private System.Windows.Forms.DataVisualization.Charting.Chart chrtConsumption;
+        private System.Windows.Forms.GroupBox grpGearboxCharacteristic;
+        private System.Windows.Forms.GroupBox grpGearRatioInGearbox;
+        private System.Windows.Forms.FlowLayoutPanel flpGearRatioInGearbox;
+        private System.Windows.Forms.GroupBox grpGearsInGearbox;
+        private System.Windows.Forms.Button btnDeleteGearInGearbox;
+        private System.Windows.Forms.Button btnAddGearToGearbox;
+        private System.Windows.Forms.GroupBox grpTransferBoxGearRatio;
+        private System.Windows.Forms.TableLayoutPanel tlpTransferBoxGearRatio;
+        private System.Windows.Forms.Label lblTransferBoxTopGearRatio;
+        private System.Windows.Forms.Label lblTransferBoxLowerGearRatio;
+        private System.Windows.Forms.TextBox txtTransferBoxTopGearRatio;
+        private System.Windows.Forms.TextBox txtTransferBoxLowerGearRatio;
+        private System.Windows.Forms.GroupBox grpTransferBox;
+        private System.Windows.Forms.RadioButton rdoTransferBoxNo;
+        private System.Windows.Forms.RadioButton rdoTransferBoxYes;
+        private System.Windows.Forms.GroupBox grpVehicleCharacteristic;
+        private System.Windows.Forms.TableLayoutPanel tlpVehicleCharacteristic;
+        private System.Windows.Forms.Label lblFinalDriveRatio;
+        private System.Windows.Forms.TextBox txtFinalDriveRatio;
+        private System.Windows.Forms.Label lblWeightOnWheels;
+        private System.Windows.Forms.TextBox txtWeightOnWheels;
+        private System.Windows.Forms.Label lblWheelRadius;
+        private System.Windows.Forms.TextBox txtWheelRadius;
+        private System.Windows.Forms.Label lblCoefOfTransEfficiency;
+        private System.Windows.Forms.TextBox txtCoefOfTransEfficiency;
     }
 }
 
