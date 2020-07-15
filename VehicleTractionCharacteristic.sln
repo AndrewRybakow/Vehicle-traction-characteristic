@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTractionCharacterist
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTractionCharacteristicUi", "VehicleTractionCharacteristicUi\VehicleTractionCharacteristicUi.csproj", "{20DA56C8-DE5A-4EB2-AAE6-34B6DF583DFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTractionCharacteristicCustomControls", "VehicleTractionCharacteristicCustomControls\VehicleTractionCharacteristicCustomControls.csproj", "{1B66A6D6-5715-4D42-96ED-A2E15E57142C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{20DA56C8-DE5A-4EB2-AAE6-34B6DF583DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20DA56C8-DE5A-4EB2-AAE6-34B6DF583DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20DA56C8-DE5A-4EB2-AAE6-34B6DF583DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B66A6D6-5715-4D42-96ED-A2E15E57142C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B66A6D6-5715-4D42-96ED-A2E15E57142C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B66A6D6-5715-4D42-96ED-A2E15E57142C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B66A6D6-5715-4D42-96ED-A2E15E57142C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
