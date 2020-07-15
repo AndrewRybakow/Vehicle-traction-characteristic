@@ -8,6 +8,7 @@ using VehicleTractionCharacteristicBl.Model;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System.IO;
+using VehicleTractionCharacteristicCustomControls;
 
 namespace VehicleTractionCharacteristicUi
 {
@@ -29,7 +30,17 @@ namespace VehicleTractionCharacteristicUi
             SaveExternalEngienCharacteristicToExcel();
         }
 
+        private void btnAddGearToGearbox_Click(object sender, EventArgs e)
+        {
+            AddGearToGearbox();
+        }
 
+        private void btnDeleteGearInGearbox_Click(object sender, EventArgs e)
+        {
+            DeleteGearInGearbox();
+        }
+
+        
 
         private void CalculateExternalEngineCharacteristic()
         {
@@ -133,6 +144,29 @@ namespace VehicleTractionCharacteristicUi
                     FileInfo file = new FileInfo(saveFileDialog.FileName);
                     ExcelFile.SaveAs(file);
                 }
+            }
+        }
+
+        private void AddGearToGearbox()
+        {
+            GearRatioBox gearRatioBox = new GearRatioBox
+            {
+                GearNum = $"{flpGearRatioInGearbox.Controls.Count + 1}:"
+            };
+
+            flpGearRatioInGearbox.Controls.Add(gearRatioBox);
+        }
+
+        private void DeleteGearInGearbox()
+        {
+            try
+            {
+                flpGearRatioInGearbox.Controls.RemoveAt(flpGearRatioInGearbox.Controls.Count - 1);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Ступени доступные для удаления отсутствуют!", "Ошибка удаления",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

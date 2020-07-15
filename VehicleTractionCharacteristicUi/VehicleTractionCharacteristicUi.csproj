@@ -103,6 +103,10 @@
       <Project>{b20afdc7-d1a0-4db1-a41c-50d1bdb668cc}</Project>
       <Name>VehicleTractionCharacteristicBl</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VehicleTractionCharacteristicCustomControls\VehicleTractionCharacteristicCustomControls.csproj">
+      <Project>{1b66a6d6-5715-4d42-96ed-a2e15e57142c}</Project>
+      <Name>VehicleTractionCharacteristicCustomControls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
