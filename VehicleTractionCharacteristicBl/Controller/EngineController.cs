@@ -139,7 +139,7 @@ namespace VehicleTractionCharacteristicBl.Controller
         }
 
         /// <summary>
-        /// Calculate engine brake-specific fuel consumption characteristic.
+        /// Calculate engine specific fuel consumption characteristic.
         /// </summary>
         /// <param name="minFConsumption"> Minimum engine fuel consumption. </param>
         /// <param name="frequencyMaxPower"> Frequency at maximum engine power. </param>
