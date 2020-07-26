@@ -4,13 +4,8 @@ namespace VehicleTractionCharacteristicBl.Model
 {
     public class Gear
     {
-        public int GearId { get; set; }
+        public int GearNumber { get; set; }
 
-        public int Number { get; set; }
-
-
-        public virtual ICollection<Speed> Speeds { get; set; }
-
-        public virtual ICollection<Characteristic> Characteristics { get; set; }
+        public double GearRatio { get; set; }
     }
 }
