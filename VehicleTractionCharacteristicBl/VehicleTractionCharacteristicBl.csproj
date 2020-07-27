@@ -53,12 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\EngineController.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Characteristic.cs" />
     <Compile Include="Model\Engine.cs" />
     <Compile Include="Model\Gear.cs" />
     <Compile Include="Model\Speed.cs" />
-    <Compile Include="Model\VTCContext.cs" />
+    <Compile Include="Model\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
