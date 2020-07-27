@@ -7,6 +7,7 @@ using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System.IO;
 using VehicleTractionCharacteristicCustomControls;
+using System.Collections.Generic;
 
 namespace VehicleTractionCharacteristicUi
 {
@@ -21,6 +22,8 @@ namespace VehicleTractionCharacteristicUi
         {
             CalculateExternalEngineCharacteristic();
             BuildExternalEngineCharacteristicGraph();
+
+            GetGearsOfGearbox();
         }
 
         private void btnSaveExcelExternalCharacteristic_Click(object sender, EventArgs e)
@@ -135,7 +138,8 @@ namespace VehicleTractionCharacteristicUi
         {
             GearRatioBox gearRatioBox = new GearRatioBox
             {
-                GearNum = $"{flpGearRatioInGearbox.Controls.Count + 1}:"
+                GearName = $"{flpGearRatioInGearbox.Controls.Count + 1}:",
+                GearNumber = flpGearRatioInGearbox.Controls.Count + 1
             };
 
             flpGearRatioInGearbox.Controls.Add(gearRatioBox);
@@ -152,6 +156,22 @@ namespace VehicleTractionCharacteristicUi
                 MessageBox.Show("Ступени доступные для удаления отсутствуют!", "Ошибка удаления",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void GetGearsOfGearbox()
+        {
+            List<Gear> gears = new List<Gear>();
+
+            foreach (GearRatioBox gear in flpGearRatioInGearbox.Controls)
+            {
+                gears.Add(new Gear
+                {
+                    GearNumber = gear.GearNumber,
+                    GearRatio = gear.GearRatio
+                });
+            }
+
+            Vehicle.Gears = gears;
         }
     }
 }

@@ -13,19 +13,27 @@ namespace VehicleTractionCharacteristicCustomControls
 
 
 
-        private string _gearNum;
+        private string _gearName;
+        private int _gearNumber;
 
         [Category("Custom Properties")]
-        public string GearNum
+        public string GearName
         {
-            get { return _gearNum; }
-            set { _gearNum = value; lblGearNumber.Text = Convert.ToString(value); }
+            get { return _gearName; }
+            set { _gearName = value; lblGearNumber.Text = Convert.ToString(value); }
         }
 
         [Category("Custom Properties")]
-        public string GearRatio
+        public int GearNumber
         {
-            get { return txtGearRatio.Text; }
+            get { return _gearNumber; }
+            set { _gearNumber = value; }
+        }
+
+        [Category("Custom Properties")]
+        public double GearRatio
+        {
+            get { return Convert.ToDouble(txtGearRatio.Text); }
             set { txtGearRatio.Text = Convert.ToString(value); }
         }
     }
