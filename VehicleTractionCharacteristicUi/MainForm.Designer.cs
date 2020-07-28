@@ -333,6 +333,7 @@
             this.txtTransferBoxTopGearRatio.Name = "txtTransferBoxTopGearRatio";
             this.txtTransferBoxTopGearRatio.Size = new System.Drawing.Size(100, 20);
             this.txtTransferBoxTopGearRatio.TabIndex = 2;
+            this.txtTransferBoxTopGearRatio.Text = "1";
             // 
             // txtTransferBoxLowerGearRatio
             // 
@@ -340,6 +341,7 @@
             this.txtTransferBoxLowerGearRatio.Name = "txtTransferBoxLowerGearRatio";
             this.txtTransferBoxLowerGearRatio.Size = new System.Drawing.Size(100, 20);
             this.txtTransferBoxLowerGearRatio.TabIndex = 3;
+            this.txtTransferBoxLowerGearRatio.Text = "2.08";
             // 
             // grpTransferBox
             // 
@@ -424,6 +426,7 @@
             this.txtFinalDriveRatio.Name = "txtFinalDriveRatio";
             this.txtFinalDriveRatio.Size = new System.Drawing.Size(100, 20);
             this.txtFinalDriveRatio.TabIndex = 5;
+            this.txtFinalDriveRatio.Text = "7.33";
             // 
             // lblWeightOnWheels
             // 
@@ -458,6 +461,7 @@
             this.txtWheelRadius.Name = "txtWheelRadius";
             this.txtWheelRadius.Size = new System.Drawing.Size(100, 20);
             this.txtWheelRadius.TabIndex = 3;
+            this.txtWheelRadius.Text = "0.508";
             // 
             // lblCoefOfTransEfficiency
             // 
@@ -872,7 +876,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1241, 641);
+            this.ClientSize = new System.Drawing.Size(1258, 641);
             this.Controls.Add(this.grpExternalCharacteristic);
             this.Controls.Add(this.grpInitialData);
             this.Controls.Add(this.grpModelStep);

@@ -24,6 +24,8 @@ namespace VehicleTractionCharacteristicUi
             BuildExternalEngineCharacteristicGraph();
 
             GetGearsOfGearbox();
+
+            CalculateSpeedCharacteristic();
         }
 
         private void btnSaveExcelExternalCharacteristic_Click(object sender, EventArgs e)
@@ -172,6 +174,17 @@ namespace VehicleTractionCharacteristicUi
             }
 
             Vehicle.Gears = gears;
+        }
+
+        private void CalculateSpeedCharacteristic()
+        {
+            SpeedContoller speed = new SpeedContoller(Convert.ToDouble(txtWheelRadius.Text),
+                                                          Convert.ToDouble(txtTransferBoxTopGearRatio.Text),
+                                                          Convert.ToDouble(txtFinalDriveRatio.Text),
+                                                          Vehicle.Engine,
+                                                          Vehicle.Gears);
+
+            Vehicle.Speed = speed.Calculate();
         }
     }
 }

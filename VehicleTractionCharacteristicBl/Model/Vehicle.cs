@@ -7,5 +7,7 @@ namespace VehicleTractionCharacteristicBl.Model
         public static List<Engine> Engine = new List<Engine>();
 
         public static List<Gear> Gears = new List<Gear>();
+
+        public static List<Speed> Speed = new List<Speed>();
     }
 }

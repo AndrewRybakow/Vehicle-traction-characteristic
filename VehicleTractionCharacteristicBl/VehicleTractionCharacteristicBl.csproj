@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\EngineController.cs" />
+    <Compile Include="Controller\SpeedContoller.cs" />
     <Compile Include="Model\Characteristic.cs" />
     <Compile Include="Model\Engine.cs" />
     <Compile Include="Model\Gear.cs" />
