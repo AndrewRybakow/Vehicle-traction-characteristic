@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace VehicleTractionCharacteristicBl.Model
+﻿namespace VehicleTractionCharacteristicBl.Model
 {
     public class Speed
     {

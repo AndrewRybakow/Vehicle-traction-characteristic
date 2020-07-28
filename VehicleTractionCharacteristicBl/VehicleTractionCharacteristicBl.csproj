@@ -54,10 +54,12 @@
   <ItemGroup>
     <Compile Include="Controller\EngineController.cs" />
     <Compile Include="Controller\SpeedContoller.cs" />
+    <Compile Include="Controller\TractionForceController.cs" />
     <Compile Include="Model\Characteristic.cs" />
     <Compile Include="Model\Engine.cs" />
     <Compile Include="Model\Gear.cs" />
     <Compile Include="Model\Speed.cs" />
+    <Compile Include="Model\TractionForce.cs" />
     <Compile Include="Model\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

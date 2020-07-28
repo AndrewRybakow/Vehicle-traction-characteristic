@@ -26,6 +26,8 @@ namespace VehicleTractionCharacteristicUi
             GetGearsOfGearbox();
 
             CalculateSpeedCharacteristic();
+
+            CalculateTractionForceCharacteristic();
         }
 
         private void btnSaveExcelExternalCharacteristic_Click(object sender, EventArgs e)
@@ -185,6 +187,19 @@ namespace VehicleTractionCharacteristicUi
                                                           Vehicle.Gears);
 
             Vehicle.Speed = speed.Calculate();
+        }
+
+        private void CalculateTractionForceCharacteristic()
+        {
+            TractionForceController tractionForce = new TractionForceController(Convert.ToDouble(txtTransferBoxTopGearRatio.Text),
+                                                                                    Convert.ToDouble(txtFinalDriveRatio.Text),
+                                                                                    Convert.ToDouble(txtCoefOfTransEfficiency.Text),
+                                                                                    Convert.ToDouble(txtWheelRadius.Text),
+                                                                                    Vehicle.Engine,
+                                                                                    Vehicle.Gears,
+                                                                                    Vehicle.Speed);
+
+            Vehicle.TractionForce = tractionForce.Calulate();
         }
     }
 }
