@@ -33,11 +33,6 @@ namespace VehicleTractionCharacteristicUi
             BuildTractionForceCharacteristicGraph();
         }
 
-        private void btnSaveExcelExternalCharacteristic_Click(object sender, EventArgs e)
-        {
-            SaveExternalEngienCharacteristicToExcel();
-        }
-
         private void btnAddGearToGearbox_Click(object sender, EventArgs e)
         {
             AddGearToGearbox();
@@ -46,6 +41,16 @@ namespace VehicleTractionCharacteristicUi
         private void btnDeleteGearInGearbox_Click(object sender, EventArgs e)
         {
             DeleteGearInGearbox();
+        }
+
+        private void btnSaveExcelExternalCharacteristic_Click(object sender, EventArgs e)
+        {
+            SaveExternalEngienCharacteristicToExcel();
+        }
+
+        private void btnSaveExcelTractionCharacteristic_Click(object sender, EventArgs e)
+        {
+            SaveTractionCharacteristicToExcel();
         }
 
         
@@ -245,6 +250,120 @@ namespace VehicleTractionCharacteristicUi
                 foreach (TractionForce item in tractionForceByGear[i])
                 {
                     chrtTractionForce.Series[$"Gear #{i + 1}"].Points.AddXY(item.Speed, item.TractionForceValue);
+                }
+            }
+        }
+
+        private void SaveTractionCharacteristicToExcel()
+        {
+            using (var ExcelFile = new ExcelPackage())
+            {
+                ExcelWorksheet workSheet = ExcelFile.Workbook.Worksheets.Add("ТЯГОВАЯ ХАРАКТЕРИСТИКА");
+
+                char step;
+
+                #region Table headers
+
+                workSheet.Cells["B1"].Value = "ТЯГОВАЯ ХАРАКТЕРИСТИКА АВТОМОБИЛЯ";
+                workSheet.Cells["B1:F1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells["B1:F1"].Style.Fill.BackgroundColor.SetColor(Color.Red);
+
+                workSheet.Cells["B2"].Value = "Модель автомобиля:";
+                workSheet.Cells["B2:D2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells["B2:D2"].Style.Fill.BackgroundColor.SetColor(Color.Orange);
+
+                workSheet.Cells["E2"].Value = txtCarModel.Text;
+                workSheet.Cells["E2:F2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells["E2:F2"].Style.Fill.BackgroundColor.SetColor(Color.YellowGreen);
+
+                workSheet.Cells["B4"].Value = "Сила тяги Р и скорость автомобиля V при движении на передаче:";
+                workSheet.Cells["B4:H4"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells["B4:H4"].Style.Fill.BackgroundColor.SetColor(Color.Orange);
+
+                step = 'B';
+                for (int i = 0; i < Vehicle.Gears.Count; i++)
+                {
+                    workSheet.Cells[$"{step}5"].Value = Convert.ToString($"Передача #{Vehicle.Gears[i].GearNumber}");
+
+                    workSheet.Cells[$"{step}5"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}5"].Style.Fill.BackgroundColor.SetColor(Color.YellowGreen);
+
+                    workSheet.Cells[$"{step}5"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                    workSheet.Cells[$"{step}5:{(char)(((int)step) + 1)}5"].Merge = true;
+
+                    step = (char)(((int)step) + 2);
+                }
+
+                step = 'B';
+                for (int i = 0; i < Vehicle.Gears.Count; i++)
+                {
+                    workSheet.Cells[$"{step}6"].Value = "V";
+                    workSheet.Cells[$"{step}6"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}6"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B050"));
+
+                    workSheet.Cells[$"{step}7"].Value = "км/ч";
+                    workSheet.Cells[$"{step}7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}7"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B050"));
+
+                    step = (char)(((int)step) + 2);
+                }
+
+                step = 'C';
+                for (int i = 0; i < Vehicle.Gears.Count; i++)
+                {
+                    workSheet.Cells[$"{step}6"].Value = "P";
+                    workSheet.Cells[$"{step}6"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}6"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B0F0"));
+
+                    workSheet.Cells[$"{step}7"].Value = "кН";
+                    workSheet.Cells[$"{step}7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}7"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B0F0"));
+
+                    step = (char)(((int)step) + 2);
+                }
+
+                #endregion
+
+                #region Table data                
+
+                List<List<TractionForce>> tractionForceByGear = new List<List<TractionForce>>();
+
+                for (int i = 1; i <= flpGearRatioInGearbox.Controls.Count; i++)
+                {
+                    var list = (from tractionForce in Vehicle.TractionForce
+                                where tractionForce.GearNumber == i
+                                select new TractionForce
+                                {
+                                    Speed = tractionForce.Speed,
+                                    TractionForceValue = tractionForce.TractionForceValue / 1000
+                                }).ToList();
+
+                    tractionForceByGear.Add(list);
+                }
+
+                step = 'B';
+                for (int i = 0; i < tractionForceByGear.Count; i++)
+                {
+                    for (int j = 0; j < Vehicle.Engine.Count; j++)
+                    {
+                        workSheet.Cells[$"{step}{8 + j}"].Value = (tractionForceByGear[i][j].Speed);
+                        workSheet.Cells[$"{(char)(((int)step) + 1)}{8 + j}"].Value = (tractionForceByGear[i][j].TractionForceValue);
+                    }
+
+                    step = (char)(((int)step) + 2);
+                }                
+
+                #endregion
+
+                var saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel files|*.xlsx|All files|*.*";
+                saveFileDialog.FileName = "Тяговая характеристика автомобиля " + txtCarModel.Text + " " + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    FileInfo file = new FileInfo(saveFileDialog.FileName);
+                    ExcelFile.SaveAs(file);
                 }
             }
         }
