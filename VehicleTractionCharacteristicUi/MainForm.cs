@@ -8,6 +8,8 @@ using OfficeOpenXml.Style;
 using System.IO;
 using VehicleTractionCharacteristicCustomControls;
 using System.Collections.Generic;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Linq;
 
 namespace VehicleTractionCharacteristicUi
 {
@@ -28,6 +30,7 @@ namespace VehicleTractionCharacteristicUi
             CalculateSpeedCharacteristic();
 
             CalculateTractionForceCharacteristic();
+            BuildTractionForceCharacteristicGraph();
         }
 
         private void btnSaveExcelExternalCharacteristic_Click(object sender, EventArgs e)
@@ -200,6 +203,50 @@ namespace VehicleTractionCharacteristicUi
                                                                                     Vehicle.Speed);
 
             Vehicle.TractionForce = tractionForce.Calulate();
+        }
+
+        private void BuildTractionForceCharacteristicGraph()
+        {
+            chrtTractionForce.Series.Clear();
+
+            // Add series to chart
+
+            for (int i = 1; i <= flpGearRatioInGearbox.Controls.Count; i++)
+            {
+                chrtTractionForce.Series.Add(new Series
+                {
+                    Name = $"Gear #{i}",
+                    ChartType = SeriesChartType.Spline,
+                    BorderWidth = 3
+                });
+            }
+
+            // Get points
+
+            List<List<TractionForce>> tractionForceByGear = new List<List<TractionForce>>();
+
+            for (int i = 1; i <= flpGearRatioInGearbox.Controls.Count; i++)
+            {
+                var list = (from tractionForce in Vehicle.TractionForce
+                            where tractionForce.GearNumber == i
+                            select new TractionForce
+                            {
+                                Speed = Math.Round(tractionForce.Speed, 2),
+                                TractionForceValue = tractionForce.TractionForceValue / 1000
+                            }).ToList();
+
+                tractionForceByGear.Add(list);
+            }
+
+            // Add points to series
+
+            for (int i = 0; i < flpGearRatioInGearbox.Controls.Count; i++)
+            {
+                foreach (TractionForce item in tractionForceByGear[i])
+                {
+                    chrtTractionForce.Series[$"Gear #{i + 1}"].Points.AddXY(item.Speed, item.TractionForceValue);
+                }
+            }
         }
     }
 }

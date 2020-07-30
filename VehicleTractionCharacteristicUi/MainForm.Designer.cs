@@ -44,7 +44,7 @@
             System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.grpModelStep = new System.Windows.Forms.GroupBox();
             this.tlpModelStep = new System.Windows.Forms.TableLayoutPanel();
             this.lblCarModel = new System.Windows.Forms.Label();
@@ -107,8 +107,8 @@
             this.tpConsumption = new System.Windows.Forms.TabPage();
             this.chrtConsumption = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grpTractionCharacteristic = new System.Windows.Forms.GroupBox();
-            this.chrtTractionForce = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnSaveExcelTractionCharacteristic = new System.Windows.Forms.Button();
+            this.chrtTractionForce = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grpModelStep.SuspendLayout();
             this.tlpModelStep.SuspendLayout();
             this.grpInitialData.SuspendLayout();
@@ -890,6 +890,15 @@
             this.grpTractionCharacteristic.TabStop = false;
             this.grpTractionCharacteristic.Text = "Тяговая характеристика автомобиля:";
             // 
+            // btnSaveExcelTractionCharacteristic
+            // 
+            this.btnSaveExcelTractionCharacteristic.Location = new System.Drawing.Point(435, 436);
+            this.btnSaveExcelTractionCharacteristic.Name = "btnSaveExcelTractionCharacteristic";
+            this.btnSaveExcelTractionCharacteristic.Size = new System.Drawing.Size(114, 23);
+            this.btnSaveExcelTractionCharacteristic.TabIndex = 1;
+            this.btnSaveExcelTractionCharacteristic.Text = "Сохранить в Excel";
+            this.btnSaveExcelTractionCharacteristic.UseVisualStyleBackColor = true;
+            // 
             // chrtTractionForce
             // 
             chartArea4.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
@@ -902,28 +911,20 @@
             chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
             chartArea4.AxisY.MinorGrid.Enabled = true;
             chartArea4.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea4.AxisY.Title = "Сила тяги, Н";
+            chartArea4.AxisY.Title = "Сила тяги, кН";
             chartArea4.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             chartArea4.Name = "ChartArea1";
             this.chrtTractionForce.ChartAreas.Add(chartArea4);
             this.chrtTractionForce.Dock = System.Windows.Forms.DockStyle.Top;
+            legend4.BorderColor = System.Drawing.Color.Black;
+            legend4.DockedToChartArea = "ChartArea1";
+            legend4.Name = "Legend1";
+            this.chrtTractionForce.Legends.Add(legend4);
             this.chrtTractionForce.Location = new System.Drawing.Point(3, 16);
             this.chrtTractionForce.Name = "chrtTractionForce";
-            series4.ChartArea = "ChartArea1";
-            series4.Name = "Series1";
-            this.chrtTractionForce.Series.Add(series4);
             this.chrtTractionForce.Size = new System.Drawing.Size(554, 408);
             this.chrtTractionForce.TabIndex = 0;
             this.chrtTractionForce.Text = "chart1";
-            // 
-            // btnSaveExcelTractionCharacteristic
-            // 
-            this.btnSaveExcelTractionCharacteristic.Location = new System.Drawing.Point(435, 436);
-            this.btnSaveExcelTractionCharacteristic.Name = "btnSaveExcelTractionCharacteristic";
-            this.btnSaveExcelTractionCharacteristic.Size = new System.Drawing.Size(114, 23);
-            this.btnSaveExcelTractionCharacteristic.TabIndex = 1;
-            this.btnSaveExcelTractionCharacteristic.Text = "Сохранить в Excel";
-            this.btnSaveExcelTractionCharacteristic.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
