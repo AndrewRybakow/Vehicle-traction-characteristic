@@ -31,6 +31,8 @@ namespace VehicleTractionCharacteristicUi
 
             CalculateTractionForceCharacteristic();
             BuildTractionForceCharacteristicGraph();
+
+            CalculateDynamicFactorCharacterisctic();
         }
 
         private void btnAddGearToGearbox_Click(object sender, EventArgs e)
@@ -146,6 +148,7 @@ namespace VehicleTractionCharacteristicUi
             }
         }
 
+
         private void AddGearToGearbox()
         {
             GearRatioBox gearRatioBox = new GearRatioBox
@@ -186,6 +189,7 @@ namespace VehicleTractionCharacteristicUi
             Vehicle.Gears = gears;
         }
 
+
         private void CalculateSpeedCharacteristic()
         {
             SpeedContoller speed = new SpeedContoller(Convert.ToDouble(txtWheelRadius.Text),
@@ -196,6 +200,7 @@ namespace VehicleTractionCharacteristicUi
 
             Vehicle.Speed = speed.Calculate();
         }
+
 
         private void CalculateTractionForceCharacteristic()
         {
@@ -366,6 +371,19 @@ namespace VehicleTractionCharacteristicUi
                     ExcelFile.SaveAs(file);
                 }
             }
+        }
+
+
+        private void CalculateDynamicFactorCharacterisctic()
+        {
+            DynamicFactorController dynamicFactorCharacteristic = new DynamicFactorController(Convert.ToDouble(txtWeightOnWheels.Text),
+                                                                                                  Convert.ToDouble(txtDragCoefficient.Text),
+                                                                                                  Convert.ToDouble(txtProjectionHeight.Text),
+                                                                                                  Convert.ToDouble(txtProjectionWidth.Text),
+                                                                                                  Convert.ToDouble(txtFillingCoefficient.Text),
+                                                                                                  Vehicle.TractionForce);
+
+            Vehicle.DynamicFactor = dynamicFactorCharacteristic.Calculate();
         }
     }
 }

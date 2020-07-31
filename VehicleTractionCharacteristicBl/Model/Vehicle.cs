@@ -11,5 +11,7 @@ namespace VehicleTractionCharacteristicBl.Model
         public static List<Speed> Speed = new List<Speed>();
 
         public static List<TractionForce> TractionForce = new List<TractionForce>();
+
+        public static List<DynamicFactor> DynamicFactor = new List<DynamicFactor>();
     }
 }

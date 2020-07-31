@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.grpModelStep = new System.Windows.Forms.GroupBox();
             this.tlpModelStep = new System.Windows.Forms.TableLayoutPanel();
             this.lblCarModel = new System.Windows.Forms.Label();
@@ -46,6 +46,14 @@
             this.txtCarModel = new System.Windows.Forms.TextBox();
             this.txtStep = new System.Windows.Forms.TextBox();
             this.grpInitialData = new System.Windows.Forms.GroupBox();
+            this.grpProjectionArea = new System.Windows.Forms.GroupBox();
+            this.tlpProjectionArea = new System.Windows.Forms.TableLayoutPanel();
+            this.lblProjectionHeight = new System.Windows.Forms.Label();
+            this.lblProjectionWidth = new System.Windows.Forms.Label();
+            this.lblFillingCoefficient = new System.Windows.Forms.Label();
+            this.txtProjectionHeight = new System.Windows.Forms.TextBox();
+            this.txtProjectionWidth = new System.Windows.Forms.TextBox();
+            this.txtFillingCoefficient = new System.Windows.Forms.TextBox();
             this.grpGearboxCharacteristic = new System.Windows.Forms.GroupBox();
             this.grpGearRatioInGearbox = new System.Windows.Forms.GroupBox();
             this.tlpGearRatioInGearbox = new System.Windows.Forms.TableLayoutPanel();
@@ -64,14 +72,16 @@
             this.rdoTransferBoxYes = new System.Windows.Forms.RadioButton();
             this.grpVehicleCharacteristic = new System.Windows.Forms.GroupBox();
             this.tlpVehicleCharacteristic = new System.Windows.Forms.TableLayoutPanel();
-            this.lblFinalDriveRatio = new System.Windows.Forms.Label();
-            this.txtFinalDriveRatio = new System.Windows.Forms.TextBox();
             this.lblWeightOnWheels = new System.Windows.Forms.Label();
             this.txtWeightOnWheels = new System.Windows.Forms.TextBox();
             this.lblWheelRadius = new System.Windows.Forms.Label();
             this.txtWheelRadius = new System.Windows.Forms.TextBox();
+            this.lblFinalDriveRatio = new System.Windows.Forms.Label();
+            this.txtFinalDriveRatio = new System.Windows.Forms.TextBox();
             this.lblCoefOfTransEfficiency = new System.Windows.Forms.Label();
             this.txtCoefOfTransEfficiency = new System.Windows.Forms.TextBox();
+            this.lblDragCoefficient = new System.Windows.Forms.Label();
+            this.txtDragCoefficient = new System.Windows.Forms.TextBox();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.grpEngineCharacteristic = new System.Windows.Forms.GroupBox();
             this.tlpEngineCharacteristic = new System.Windows.Forms.TableLayoutPanel();
@@ -103,19 +113,11 @@
             this.grpTractionCharacteristic = new System.Windows.Forms.GroupBox();
             this.btnSaveExcelTractionCharacteristic = new System.Windows.Forms.Button();
             this.chrtTractionForce = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.lblDragCoefficient = new System.Windows.Forms.Label();
-            this.txtDragCoefficient = new System.Windows.Forms.TextBox();
-            this.grpProjectionArea = new System.Windows.Forms.GroupBox();
-            this.tlpProjectionArea = new System.Windows.Forms.TableLayoutPanel();
-            this.lblProjectionHeight = new System.Windows.Forms.Label();
-            this.lblProjectionWidth = new System.Windows.Forms.Label();
-            this.lblFillingCoefficient = new System.Windows.Forms.Label();
-            this.txtProjectionHeight = new System.Windows.Forms.TextBox();
-            this.txtProjectionWidth = new System.Windows.Forms.TextBox();
-            this.txtFillingCoefficient = new System.Windows.Forms.TextBox();
             this.grpModelStep.SuspendLayout();
             this.tlpModelStep.SuspendLayout();
             this.grpInitialData.SuspendLayout();
+            this.grpProjectionArea.SuspendLayout();
+            this.tlpProjectionArea.SuspendLayout();
             this.grpGearboxCharacteristic.SuspendLayout();
             this.grpGearRatioInGearbox.SuspendLayout();
             this.tlpGearRatioInGearbox.SuspendLayout();
@@ -137,8 +139,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chrtConsumption)).BeginInit();
             this.grpTractionCharacteristic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtTractionForce)).BeginInit();
-            this.grpProjectionArea.SuspendLayout();
-            this.tlpProjectionArea.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpModelStep
@@ -217,6 +217,91 @@
             this.grpInitialData.TabIndex = 9;
             this.grpInitialData.TabStop = false;
             this.grpInitialData.Text = "Исходные данные:";
+            // 
+            // grpProjectionArea
+            // 
+            this.grpProjectionArea.Controls.Add(this.tlpProjectionArea);
+            this.grpProjectionArea.Location = new System.Drawing.Point(523, 197);
+            this.grpProjectionArea.Name = "grpProjectionArea";
+            this.grpProjectionArea.Size = new System.Drawing.Size(341, 100);
+            this.grpProjectionArea.TabIndex = 14;
+            this.grpProjectionArea.TabStop = false;
+            this.grpProjectionArea.Text = "Площадь поперечной проекции автомобиля:";
+            // 
+            // tlpProjectionArea
+            // 
+            this.tlpProjectionArea.ColumnCount = 2;
+            this.tlpProjectionArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.10448F));
+            this.tlpProjectionArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.89552F));
+            this.tlpProjectionArea.Controls.Add(this.lblProjectionHeight, 0, 0);
+            this.tlpProjectionArea.Controls.Add(this.lblProjectionWidth, 0, 1);
+            this.tlpProjectionArea.Controls.Add(this.lblFillingCoefficient, 0, 2);
+            this.tlpProjectionArea.Controls.Add(this.txtProjectionHeight, 1, 0);
+            this.tlpProjectionArea.Controls.Add(this.txtProjectionWidth, 1, 1);
+            this.tlpProjectionArea.Controls.Add(this.txtFillingCoefficient, 1, 2);
+            this.tlpProjectionArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpProjectionArea.Location = new System.Drawing.Point(3, 16);
+            this.tlpProjectionArea.Name = "tlpProjectionArea";
+            this.tlpProjectionArea.RowCount = 3;
+            this.tlpProjectionArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpProjectionArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpProjectionArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpProjectionArea.Size = new System.Drawing.Size(335, 81);
+            this.tlpProjectionArea.TabIndex = 0;
+            // 
+            // lblProjectionHeight
+            // 
+            this.lblProjectionHeight.AutoSize = true;
+            this.lblProjectionHeight.Location = new System.Drawing.Point(3, 5);
+            this.lblProjectionHeight.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblProjectionHeight.Name = "lblProjectionHeight";
+            this.lblProjectionHeight.Size = new System.Drawing.Size(113, 13);
+            this.lblProjectionHeight.TabIndex = 0;
+            this.lblProjectionHeight.Text = "Высота проекции, м:";
+            // 
+            // lblProjectionWidth
+            // 
+            this.lblProjectionWidth.AutoSize = true;
+            this.lblProjectionWidth.Location = new System.Drawing.Point(3, 32);
+            this.lblProjectionWidth.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblProjectionWidth.Name = "lblProjectionWidth";
+            this.lblProjectionWidth.Size = new System.Drawing.Size(114, 13);
+            this.lblProjectionWidth.TabIndex = 1;
+            this.lblProjectionWidth.Text = "Ширина проекции, м:";
+            // 
+            // lblFillingCoefficient
+            // 
+            this.lblFillingCoefficient.AutoSize = true;
+            this.lblFillingCoefficient.Location = new System.Drawing.Point(3, 59);
+            this.lblFillingCoefficient.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblFillingCoefficient.Name = "lblFillingCoefficient";
+            this.lblFillingCoefficient.Size = new System.Drawing.Size(191, 13);
+            this.lblFillingCoefficient.TabIndex = 2;
+            this.lblFillingCoefficient.Text = "Коэффициент заполнения площади:";
+            // 
+            // txtProjectionHeight
+            // 
+            this.txtProjectionHeight.Location = new System.Drawing.Point(201, 3);
+            this.txtProjectionHeight.Name = "txtProjectionHeight";
+            this.txtProjectionHeight.Size = new System.Drawing.Size(100, 20);
+            this.txtProjectionHeight.TabIndex = 3;
+            this.txtProjectionHeight.Text = "2.9";
+            // 
+            // txtProjectionWidth
+            // 
+            this.txtProjectionWidth.Location = new System.Drawing.Point(201, 30);
+            this.txtProjectionWidth.Name = "txtProjectionWidth";
+            this.txtProjectionWidth.Size = new System.Drawing.Size(100, 20);
+            this.txtProjectionWidth.TabIndex = 4;
+            this.txtProjectionWidth.Text = "2.5";
+            // 
+            // txtFillingCoefficient
+            // 
+            this.txtFillingCoefficient.Location = new System.Drawing.Point(201, 57);
+            this.txtFillingCoefficient.Name = "txtFillingCoefficient";
+            this.txtFillingCoefficient.Size = new System.Drawing.Size(100, 20);
+            this.txtFillingCoefficient.TabIndex = 5;
+            this.txtFillingCoefficient.Text = "0.9";
             // 
             // grpGearboxCharacteristic
             // 
@@ -427,24 +512,6 @@
             this.tlpVehicleCharacteristic.Size = new System.Drawing.Size(335, 151);
             this.tlpVehicleCharacteristic.TabIndex = 0;
             // 
-            // lblFinalDriveRatio
-            // 
-            this.lblFinalDriveRatio.AutoSize = true;
-            this.lblFinalDriveRatio.Location = new System.Drawing.Point(3, 125);
-            this.lblFinalDriveRatio.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.lblFinalDriveRatio.Name = "lblFinalDriveRatio";
-            this.lblFinalDriveRatio.Size = new System.Drawing.Size(208, 13);
-            this.lblFinalDriveRatio.TabIndex = 4;
-            this.lblFinalDriveRatio.Text = "Передаточное число главной передачи:";
-            // 
-            // txtFinalDriveRatio
-            // 
-            this.txtFinalDriveRatio.Location = new System.Drawing.Point(222, 123);
-            this.txtFinalDriveRatio.Name = "txtFinalDriveRatio";
-            this.txtFinalDriveRatio.Size = new System.Drawing.Size(100, 20);
-            this.txtFinalDriveRatio.TabIndex = 5;
-            this.txtFinalDriveRatio.Text = "7.33";
-            // 
             // lblWeightOnWheels
             // 
             this.lblWeightOnWheels.AutoSize = true;
@@ -461,6 +528,7 @@
             this.txtWeightOnWheels.Name = "txtWeightOnWheels";
             this.txtWeightOnWheels.Size = new System.Drawing.Size(100, 20);
             this.txtWeightOnWheels.TabIndex = 7;
+            this.txtWeightOnWheels.Text = "102269";
             // 
             // lblWheelRadius
             // 
@@ -480,6 +548,24 @@
             this.txtWheelRadius.TabIndex = 3;
             this.txtWheelRadius.Text = "0.508";
             // 
+            // lblFinalDriveRatio
+            // 
+            this.lblFinalDriveRatio.AutoSize = true;
+            this.lblFinalDriveRatio.Location = new System.Drawing.Point(3, 125);
+            this.lblFinalDriveRatio.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblFinalDriveRatio.Name = "lblFinalDriveRatio";
+            this.lblFinalDriveRatio.Size = new System.Drawing.Size(208, 13);
+            this.lblFinalDriveRatio.TabIndex = 4;
+            this.lblFinalDriveRatio.Text = "Передаточное число главной передачи:";
+            // 
+            // txtFinalDriveRatio
+            // 
+            this.txtFinalDriveRatio.Location = new System.Drawing.Point(222, 123);
+            this.txtFinalDriveRatio.Name = "txtFinalDriveRatio";
+            this.txtFinalDriveRatio.Size = new System.Drawing.Size(100, 20);
+            this.txtFinalDriveRatio.TabIndex = 5;
+            this.txtFinalDriveRatio.Text = "7.33";
+            // 
             // lblCoefOfTransEfficiency
             // 
             this.lblCoefOfTransEfficiency.AutoSize = true;
@@ -497,6 +583,23 @@
             this.txtCoefOfTransEfficiency.Size = new System.Drawing.Size(100, 20);
             this.txtCoefOfTransEfficiency.TabIndex = 2;
             this.txtCoefOfTransEfficiency.Text = "0.85";
+            // 
+            // lblDragCoefficient
+            // 
+            this.lblDragCoefficient.AutoSize = true;
+            this.lblDragCoefficient.Location = new System.Drawing.Point(3, 60);
+            this.lblDragCoefficient.Name = "lblDragCoefficient";
+            this.lblDragCoefficient.Size = new System.Drawing.Size(185, 26);
+            this.lblDragCoefficient.TabIndex = 8;
+            this.lblDragCoefficient.Text = "Коэффициент аэродинамического сопротивления:";
+            // 
+            // txtDragCoefficient
+            // 
+            this.txtDragCoefficient.Location = new System.Drawing.Point(222, 63);
+            this.txtDragCoefficient.Name = "txtDragCoefficient";
+            this.txtDragCoefficient.Size = new System.Drawing.Size(100, 20);
+            this.txtDragCoefficient.TabIndex = 9;
+            this.txtDragCoefficient.Text = "0.96";
             // 
             // btnCalculate
             // 
@@ -743,36 +846,36 @@
             // 
             // chrtPower
             // 
-            chartArea1.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea1.AxisX.IsStartedFromZero = false;
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisX.MinorGrid.Enabled = true;
-            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisX.Title = "Частота вращения коленчатого вала, об/мин";
-            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea1.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea1.AxisY.IsStartedFromZero = false;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.MinorGrid.Enabled = true;
-            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.Title = "Мощность, кВт";
-            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea1.Name = "ChartArea1";
-            this.chrtPower.ChartAreas.Add(chartArea1);
+            chartArea9.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea9.AxisX.IsStartedFromZero = false;
+            chartArea9.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea9.AxisX.MinorGrid.Enabled = true;
+            chartArea9.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea9.AxisX.Title = "Частота вращения коленчатого вала, об/мин";
+            chartArea9.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea9.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea9.AxisY.IsStartedFromZero = false;
+            chartArea9.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea9.AxisY.MinorGrid.Enabled = true;
+            chartArea9.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea9.AxisY.Title = "Мощность, кВт";
+            chartArea9.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea9.Name = "ChartArea1";
+            this.chrtPower.ChartAreas.Add(chartArea9);
             this.chrtPower.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chrtPower.Legends.Add(legend1);
+            legend9.Name = "Legend1";
+            this.chrtPower.Legends.Add(legend9);
             this.chrtPower.Location = new System.Drawing.Point(3, 3);
             this.chrtPower.Name = "chrtPower";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.IsVisibleInLegend = false;
-            series1.Legend = "Legend1";
-            series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series1.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series1.Name = "Power";
-            this.chrtPower.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.IsVisibleInLegend = false;
+            series7.Legend = "Legend1";
+            series7.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series7.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series7.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series7.Name = "Power";
+            this.chrtPower.Series.Add(series7);
             this.chrtPower.Size = new System.Drawing.Size(540, 380);
             this.chrtPower.TabIndex = 0;
             this.chrtPower.Text = "chart1";
@@ -790,36 +893,36 @@
             // 
             // chrtTorque
             // 
-            chartArea2.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea2.AxisX.IsStartedFromZero = false;
-            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea2.AxisX.MinorGrid.Enabled = true;
-            chartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea2.AxisX.Title = "Частота вращения коленчатого вала, об/мин";
-            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea2.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea2.AxisY.IsStartedFromZero = false;
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea2.AxisY.MinorGrid.Enabled = true;
-            chartArea2.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea2.AxisY.Title = "Момент, Нм";
-            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea2.Name = "ChartArea1";
-            this.chrtTorque.ChartAreas.Add(chartArea2);
+            chartArea10.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea10.AxisX.IsStartedFromZero = false;
+            chartArea10.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea10.AxisX.MinorGrid.Enabled = true;
+            chartArea10.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea10.AxisX.Title = "Частота вращения коленчатого вала, об/мин";
+            chartArea10.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea10.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea10.AxisY.IsStartedFromZero = false;
+            chartArea10.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea10.AxisY.MinorGrid.Enabled = true;
+            chartArea10.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea10.AxisY.Title = "Момент, Нм";
+            chartArea10.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea10.Name = "ChartArea1";
+            this.chrtTorque.ChartAreas.Add(chartArea10);
             this.chrtTorque.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chrtTorque.Legends.Add(legend2);
+            legend10.Name = "Legend1";
+            this.chrtTorque.Legends.Add(legend10);
             this.chrtTorque.Location = new System.Drawing.Point(3, 3);
             this.chrtTorque.Name = "chrtTorque";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.IsVisibleInLegend = false;
-            series2.Legend = "Legend1";
-            series2.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series2.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series2.Name = "Torque";
-            this.chrtTorque.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.IsVisibleInLegend = false;
+            series8.Legend = "Legend1";
+            series8.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series8.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series8.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series8.Name = "Torque";
+            this.chrtTorque.Series.Add(series8);
             this.chrtTorque.Size = new System.Drawing.Size(540, 380);
             this.chrtTorque.TabIndex = 0;
             this.chrtTorque.Text = "chart1";
@@ -837,36 +940,36 @@
             // 
             // chrtConsumption
             // 
-            chartArea3.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea3.AxisX.IsStartedFromZero = false;
-            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea3.AxisX.MinorGrid.Enabled = true;
-            chartArea3.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea3.AxisX.Title = "Частота вращения коленчатого вала, об/мин";
-            chartArea3.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea3.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea3.AxisY.IsStartedFromZero = false;
-            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea3.AxisY.MinorGrid.Enabled = true;
-            chartArea3.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea3.AxisY.Title = "Удельный расход топлива, г/кВтч";
-            chartArea3.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea3.Name = "ChartArea1";
-            this.chrtConsumption.ChartAreas.Add(chartArea3);
+            chartArea11.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea11.AxisX.IsStartedFromZero = false;
+            chartArea11.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea11.AxisX.MinorGrid.Enabled = true;
+            chartArea11.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea11.AxisX.Title = "Частота вращения коленчатого вала, об/мин";
+            chartArea11.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea11.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea11.AxisY.IsStartedFromZero = false;
+            chartArea11.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea11.AxisY.MinorGrid.Enabled = true;
+            chartArea11.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea11.AxisY.Title = "Удельный расход топлива, г/кВтч";
+            chartArea11.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea11.Name = "ChartArea1";
+            this.chrtConsumption.ChartAreas.Add(chartArea11);
             this.chrtConsumption.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.chrtConsumption.Legends.Add(legend3);
+            legend11.Name = "Legend1";
+            this.chrtConsumption.Legends.Add(legend11);
             this.chrtConsumption.Location = new System.Drawing.Point(3, 3);
             this.chrtConsumption.Name = "chrtConsumption";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.IsVisibleInLegend = false;
-            series3.Legend = "Legend1";
-            series3.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series3.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series3.Name = "Consumption";
-            this.chrtConsumption.Series.Add(series3);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.IsVisibleInLegend = false;
+            series9.Legend = "Legend1";
+            series9.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series9.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series9.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series9.Name = "Consumption";
+            this.chrtConsumption.Series.Add(series9);
             this.chrtConsumption.Size = new System.Drawing.Size(540, 380);
             this.chrtConsumption.TabIndex = 0;
             this.chrtConsumption.Text = "chart1";
@@ -894,128 +997,30 @@
             // 
             // chrtTractionForce
             // 
-            chartArea4.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea4.AxisX.MinorGrid.Enabled = true;
-            chartArea4.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea4.AxisX.Title = "Скорость, км/ч";
-            chartArea4.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea4.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea4.AxisY.MinorGrid.Enabled = true;
-            chartArea4.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea4.AxisY.Title = "Сила тяги, кН";
-            chartArea4.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea4.Name = "ChartArea1";
-            this.chrtTractionForce.ChartAreas.Add(chartArea4);
+            chartArea12.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea12.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea12.AxisX.MinorGrid.Enabled = true;
+            chartArea12.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea12.AxisX.Title = "Скорость, км/ч";
+            chartArea12.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea12.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea12.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea12.AxisY.MinorGrid.Enabled = true;
+            chartArea12.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea12.AxisY.Title = "Сила тяги, кН";
+            chartArea12.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea12.Name = "ChartArea1";
+            this.chrtTractionForce.ChartAreas.Add(chartArea12);
             this.chrtTractionForce.Dock = System.Windows.Forms.DockStyle.Top;
-            legend4.BorderColor = System.Drawing.Color.Black;
-            legend4.DockedToChartArea = "ChartArea1";
-            legend4.Name = "Legend1";
-            this.chrtTractionForce.Legends.Add(legend4);
+            legend12.BorderColor = System.Drawing.Color.Black;
+            legend12.DockedToChartArea = "ChartArea1";
+            legend12.Name = "Legend1";
+            this.chrtTractionForce.Legends.Add(legend12);
             this.chrtTractionForce.Location = new System.Drawing.Point(3, 16);
             this.chrtTractionForce.Name = "chrtTractionForce";
             this.chrtTractionForce.Size = new System.Drawing.Size(554, 408);
             this.chrtTractionForce.TabIndex = 0;
             this.chrtTractionForce.Text = "chart1";
-            // 
-            // lblDragCoefficient
-            // 
-            this.lblDragCoefficient.AutoSize = true;
-            this.lblDragCoefficient.Location = new System.Drawing.Point(3, 60);
-            this.lblDragCoefficient.Name = "lblDragCoefficient";
-            this.lblDragCoefficient.Size = new System.Drawing.Size(185, 26);
-            this.lblDragCoefficient.TabIndex = 8;
-            this.lblDragCoefficient.Text = "Коэффициент аэродинамического сопротивления:";
-            // 
-            // txtDragCoefficient
-            // 
-            this.txtDragCoefficient.Location = new System.Drawing.Point(222, 63);
-            this.txtDragCoefficient.Name = "txtDragCoefficient";
-            this.txtDragCoefficient.Size = new System.Drawing.Size(100, 20);
-            this.txtDragCoefficient.TabIndex = 9;
-            // 
-            // grpProjectionArea
-            // 
-            this.grpProjectionArea.Controls.Add(this.tlpProjectionArea);
-            this.grpProjectionArea.Location = new System.Drawing.Point(523, 197);
-            this.grpProjectionArea.Name = "grpProjectionArea";
-            this.grpProjectionArea.Size = new System.Drawing.Size(341, 100);
-            this.grpProjectionArea.TabIndex = 14;
-            this.grpProjectionArea.TabStop = false;
-            this.grpProjectionArea.Text = "Площадь поперечной проекции автомобиля:";
-            // 
-            // tlpProjectionArea
-            // 
-            this.tlpProjectionArea.ColumnCount = 2;
-            this.tlpProjectionArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.10448F));
-            this.tlpProjectionArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.89552F));
-            this.tlpProjectionArea.Controls.Add(this.lblProjectionHeight, 0, 0);
-            this.tlpProjectionArea.Controls.Add(this.lblProjectionWidth, 0, 1);
-            this.tlpProjectionArea.Controls.Add(this.lblFillingCoefficient, 0, 2);
-            this.tlpProjectionArea.Controls.Add(this.txtProjectionHeight, 1, 0);
-            this.tlpProjectionArea.Controls.Add(this.txtProjectionWidth, 1, 1);
-            this.tlpProjectionArea.Controls.Add(this.txtFillingCoefficient, 1, 2);
-            this.tlpProjectionArea.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpProjectionArea.Location = new System.Drawing.Point(3, 16);
-            this.tlpProjectionArea.Name = "tlpProjectionArea";
-            this.tlpProjectionArea.RowCount = 3;
-            this.tlpProjectionArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpProjectionArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpProjectionArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpProjectionArea.Size = new System.Drawing.Size(335, 81);
-            this.tlpProjectionArea.TabIndex = 0;
-            // 
-            // lblProjectionHeight
-            // 
-            this.lblProjectionHeight.AutoSize = true;
-            this.lblProjectionHeight.Location = new System.Drawing.Point(3, 5);
-            this.lblProjectionHeight.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.lblProjectionHeight.Name = "lblProjectionHeight";
-            this.lblProjectionHeight.Size = new System.Drawing.Size(113, 13);
-            this.lblProjectionHeight.TabIndex = 0;
-            this.lblProjectionHeight.Text = "Высота проекции, м:";
-            // 
-            // lblProjectionWidth
-            // 
-            this.lblProjectionWidth.AutoSize = true;
-            this.lblProjectionWidth.Location = new System.Drawing.Point(3, 31);
-            this.lblProjectionWidth.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.lblProjectionWidth.Name = "lblProjectionWidth";
-            this.lblProjectionWidth.Size = new System.Drawing.Size(114, 13);
-            this.lblProjectionWidth.TabIndex = 1;
-            this.lblProjectionWidth.Text = "Ширина проекции, м:";
-            // 
-            // lblFillingCoefficient
-            // 
-            this.lblFillingCoefficient.AutoSize = true;
-            this.lblFillingCoefficient.Location = new System.Drawing.Point(3, 57);
-            this.lblFillingCoefficient.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.lblFillingCoefficient.Name = "lblFillingCoefficient";
-            this.lblFillingCoefficient.Size = new System.Drawing.Size(191, 13);
-            this.lblFillingCoefficient.TabIndex = 2;
-            this.lblFillingCoefficient.Text = "Коэффициент заполнения площади:";
-            // 
-            // txtProjectionHeight
-            // 
-            this.txtProjectionHeight.Location = new System.Drawing.Point(200, 3);
-            this.txtProjectionHeight.Name = "txtProjectionHeight";
-            this.txtProjectionHeight.Size = new System.Drawing.Size(100, 20);
-            this.txtProjectionHeight.TabIndex = 3;
-            // 
-            // txtProjectionWidth
-            // 
-            this.txtProjectionWidth.Location = new System.Drawing.Point(200, 29);
-            this.txtProjectionWidth.Name = "txtProjectionWidth";
-            this.txtProjectionWidth.Size = new System.Drawing.Size(100, 20);
-            this.txtProjectionWidth.TabIndex = 4;
-            // 
-            // txtFillingCoefficient
-            // 
-            this.txtFillingCoefficient.Location = new System.Drawing.Point(200, 55);
-            this.txtFillingCoefficient.Name = "txtFillingCoefficient";
-            this.txtFillingCoefficient.Size = new System.Drawing.Size(100, 20);
-            this.txtFillingCoefficient.TabIndex = 5;
             // 
             // MainForm
             // 
@@ -1035,6 +1040,9 @@
             this.tlpModelStep.ResumeLayout(false);
             this.tlpModelStep.PerformLayout();
             this.grpInitialData.ResumeLayout(false);
+            this.grpProjectionArea.ResumeLayout(false);
+            this.tlpProjectionArea.ResumeLayout(false);
+            this.tlpProjectionArea.PerformLayout();
             this.grpGearboxCharacteristic.ResumeLayout(false);
             this.grpGearRatioInGearbox.ResumeLayout(false);
             this.tlpGearRatioInGearbox.ResumeLayout(false);
@@ -1060,9 +1068,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chrtConsumption)).EndInit();
             this.grpTractionCharacteristic.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chrtTractionForce)).EndInit();
-            this.grpProjectionArea.ResumeLayout(false);
-            this.tlpProjectionArea.ResumeLayout(false);
-            this.tlpProjectionArea.PerformLayout();
             this.ResumeLayout(false);
 
         }
