@@ -33,6 +33,7 @@ namespace VehicleTractionCharacteristicUi
             BuildTractionForceCharacteristicGraph();
 
             CalculateDynamicFactorCharacterisctic();
+            BuildDynamicFactorCharacteristicGraph();
         }
 
         private void btnAddGearToGearbox_Click(object sender, EventArgs e)
@@ -384,6 +385,50 @@ namespace VehicleTractionCharacteristicUi
                                                                                                   Vehicle.TractionForce);
 
             Vehicle.DynamicFactor = dynamicFactorCharacteristic.Calculate();
+        }
+
+        private void BuildDynamicFactorCharacteristicGraph()
+        {
+            chrtDynamicCharacteristic.Series.Clear();
+
+            // Add series to chart
+
+            for (int i = 1; i <= Vehicle.Gears.Count; i++)
+            {
+                chrtDynamicCharacteristic.Series.Add(new Series
+                {
+                    Name = $"Gear #{i}",
+                    ChartType = SeriesChartType.Spline,
+                    BorderWidth = 3
+                });
+            }
+
+            // Get points
+
+            List<List<DynamicFactor>> dynamicFactorByGear = new List<List<DynamicFactor>>();
+
+            for (int i = 1; i <= Vehicle.Gears.Count; i++)
+            {
+                var list = (from dynamicFactor in Vehicle.DynamicFactor
+                            where dynamicFactor.GearNumber == i
+                            select new DynamicFactor
+                            {
+                                Speed = Math.Round(dynamicFactor.Speed, 2),
+                                DynamicFactorValue = dynamicFactor.DynamicFactorValue
+                            }).ToList();
+
+                dynamicFactorByGear.Add(list);
+            }
+
+            // Add points to series
+
+            for (int i = 0; i < Vehicle.Gears.Count; i++)
+            {
+                foreach (DynamicFactor item in dynamicFactorByGear[i])
+                {
+                    chrtDynamicCharacteristic.Series[$"Gear #{i + 1}"].Points.AddXY(item.Speed, item.DynamicFactorValue);
+                }
+            }
         }
     }
 }

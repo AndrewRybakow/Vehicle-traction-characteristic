@@ -116,8 +116,8 @@
             this.btnSaveExcelTractionCharacteristic = new System.Windows.Forms.Button();
             this.chrtTractionForce = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grpDynamicCharacteristic = new System.Windows.Forms.GroupBox();
-            this.chrtDynamicCharacteristic = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnSaveExcelDynamicCharacteristic = new System.Windows.Forms.Button();
+            this.chrtDynamicCharacteristic = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grpModelStep.SuspendLayout();
             this.tlpModelStep.SuspendLayout();
             this.grpInitialData.SuspendLayout();
@@ -1040,6 +1040,15 @@
             this.grpDynamicCharacteristic.TabStop = false;
             this.grpDynamicCharacteristic.Text = "Динамическая характеристика автомобиля:";
             // 
+            // btnSaveExcelDynamicCharacteristic
+            // 
+            this.btnSaveExcelDynamicCharacteristic.Location = new System.Drawing.Point(436, 439);
+            this.btnSaveExcelDynamicCharacteristic.Name = "btnSaveExcelDynamicCharacteristic";
+            this.btnSaveExcelDynamicCharacteristic.Size = new System.Drawing.Size(114, 23);
+            this.btnSaveExcelDynamicCharacteristic.TabIndex = 1;
+            this.btnSaveExcelDynamicCharacteristic.Text = "Сохранить в Excel";
+            this.btnSaveExcelDynamicCharacteristic.UseVisualStyleBackColor = true;
+            // 
             // chrtDynamicCharacteristic
             // 
             chartArea5.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
@@ -1067,21 +1076,12 @@
             this.chrtDynamicCharacteristic.TabIndex = 0;
             this.chrtDynamicCharacteristic.Text = "chart1";
             // 
-            // btnSaveExcelDynamicCharacteristic
-            // 
-            this.btnSaveExcelDynamicCharacteristic.Location = new System.Drawing.Point(436, 439);
-            this.btnSaveExcelDynamicCharacteristic.Name = "btnSaveExcelDynamicCharacteristic";
-            this.btnSaveExcelDynamicCharacteristic.Size = new System.Drawing.Size(114, 23);
-            this.btnSaveExcelDynamicCharacteristic.TabIndex = 1;
-            this.btnSaveExcelDynamicCharacteristic.Text = "Сохранить в Excel";
-            this.btnSaveExcelDynamicCharacteristic.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1242, 641);
+            this.ClientSize = new System.Drawing.Size(1259, 641);
             this.Controls.Add(this.grpDynamicCharacteristic);
             this.Controls.Add(this.grpTractionCharacteristic);
             this.Controls.Add(this.grpExternalCharacteristic);
