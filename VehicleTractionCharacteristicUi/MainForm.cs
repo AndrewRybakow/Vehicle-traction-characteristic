@@ -56,6 +56,11 @@ namespace VehicleTractionCharacteristicUi
             SaveTractionCharacteristicToExcel();
         }
 
+        private void btnSaveExcelDynamicCharacteristic_Click(object sender, EventArgs e)
+        {
+            SaveDynamicFactorCharacteristicToExcel();
+        }
+
         
 
         private void CalculateExternalEngineCharacteristic()
@@ -427,6 +432,120 @@ namespace VehicleTractionCharacteristicUi
                 foreach (DynamicFactor item in dynamicFactorByGear[i])
                 {
                     chrtDynamicCharacteristic.Series[$"Gear #{i + 1}"].Points.AddXY(item.Speed, item.DynamicFactorValue);
+                }
+            }
+        }
+
+        private void SaveDynamicFactorCharacteristicToExcel()
+        {
+            using (var ExcelFile = new ExcelPackage())
+            {
+                ExcelWorksheet workSheet = ExcelFile.Workbook.Worksheets.Add("ДИНАМИЧЕСКАЯ ХАРАКТЕРИСТИКА");
+
+                char step;
+
+                #region Table headers
+
+                workSheet.Cells["B1"].Value = "ДИНАМИЧЕСКАЯ ХАРАКТЕРИСТИКА АВТОМОБИЛЯ";
+                workSheet.Cells["B1:G1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells["B1:G1"].Style.Fill.BackgroundColor.SetColor(Color.Red);
+
+                workSheet.Cells["B2"].Value = "Модель автомобиля:";
+                workSheet.Cells["B2:E2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells["B2:E2"].Style.Fill.BackgroundColor.SetColor(Color.Orange);
+
+                workSheet.Cells["F2"].Value = txtCarModel.Text;
+                workSheet.Cells["F2:G2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells["F2:G2"].Style.Fill.BackgroundColor.SetColor(Color.YellowGreen);
+
+                workSheet.Cells["B4"].Value = "Скорость V и динамический фактор D при движении на передаче:";
+                workSheet.Cells["B4:H4"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells["B4:H4"].Style.Fill.BackgroundColor.SetColor(Color.Orange);
+
+                step = 'B';
+                for (int i = 0; i < Vehicle.Gears.Count; i++)
+                {
+                    workSheet.Cells[$"{step}5"].Value = Convert.ToString($"Передача #{Vehicle.Gears[i].GearNumber}");
+
+                    workSheet.Cells[$"{step}5"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}5"].Style.Fill.BackgroundColor.SetColor(Color.YellowGreen);
+
+                    workSheet.Cells[$"{step}5"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                    workSheet.Cells[$"{step}5:{(char)(((int)step) + 1)}5"].Merge = true;
+
+                    step = (char)(((int)step) + 2);
+                }
+
+                step = 'B';
+                for (int i = 0; i < Vehicle.Gears.Count; i++)
+                {
+                    workSheet.Cells[$"{step}6"].Value = "V";
+                    workSheet.Cells[$"{step}6"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}6"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B050"));
+
+                    workSheet.Cells[$"{step}7"].Value = "км/ч";
+                    workSheet.Cells[$"{step}7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}7"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B050"));
+
+                    step = (char)(((int)step) + 2);
+                }
+
+                step = 'C';
+                for (int i = 0; i < Vehicle.Gears.Count; i++)
+                {
+                    workSheet.Cells[$"{step}6"].Value = "D";
+                    workSheet.Cells[$"{step}6"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}6"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B0F0"));
+
+                    workSheet.Cells[$"{step}7"].Value = "%";
+                    workSheet.Cells[$"{step}7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}7"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B0F0"));
+
+                    step = (char)(((int)step) + 2);
+                }
+
+                #endregion
+
+                #region Table data                
+
+                List<List<DynamicFactor>> dynamicFactorByGear = new List<List<DynamicFactor>>();
+
+                for (int i = 1; i <= Vehicle.Gears.Count; i++)
+                {
+                    var list = (from dynamicFactor in Vehicle.DynamicFactor
+                                where dynamicFactor.GearNumber == i
+                                select new DynamicFactor
+                                {
+                                    Speed = dynamicFactor.Speed,
+                                    DynamicFactorValue = dynamicFactor.DynamicFactorValue
+                                }).ToList();
+
+                    dynamicFactorByGear.Add(list);
+                }
+
+                step = 'B';
+                for (int i = 0; i < dynamicFactorByGear.Count; i++)
+                {
+                    for (int j = 0; j < Vehicle.Engine.Count; j++)
+                    {
+                        workSheet.Cells[$"{step}{8 + j}"].Value = (dynamicFactorByGear[i][j].Speed);
+                        workSheet.Cells[$"{(char)(((int)step) + 1)}{8 + j}"].Value = (dynamicFactorByGear[i][j].DynamicFactorValue);
+                    }
+
+                    step = (char)(((int)step) + 2);
+                }
+
+                #endregion
+
+                var saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel files|*.xlsx|All files|*.*";
+                saveFileDialog.FileName = "Динамическая характеристика автомобиля " + txtCarModel.Text + " " + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    FileInfo file = new FileInfo(saveFileDialog.FileName);
+                    ExcelFile.SaveAs(file);
                 }
             }
         }
