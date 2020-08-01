@@ -41,6 +41,8 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.grpModelStep = new System.Windows.Forms.GroupBox();
             this.tlpModelStep = new System.Windows.Forms.TableLayoutPanel();
             this.lblCarModel = new System.Windows.Forms.Label();
@@ -118,6 +120,23 @@
             this.grpDynamicCharacteristic = new System.Windows.Forms.GroupBox();
             this.btnSaveExcelDynamicCharacteristic = new System.Windows.Forms.Button();
             this.chrtDynamicCharacteristic = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblVehicleMass = new System.Windows.Forms.Label();
+            this.lblNumberOfWheels = new System.Windows.Forms.Label();
+            this.txtVehicleMass = new System.Windows.Forms.TextBox();
+            this.txtNumberOfWheels = new System.Windows.Forms.TextBox();
+            this.grpMomentOfInertia = new System.Windows.Forms.GroupBox();
+            this.tlpMomentOfInertia = new System.Windows.Forms.TableLayoutPanel();
+            this.lblMotorMomentOfInertia = new System.Windows.Forms.Label();
+            this.lblWheelMomentOfInertia = new System.Windows.Forms.Label();
+            this.txtMotorMomentOfInertia = new System.Windows.Forms.TextBox();
+            this.txtWheelMomentOfInertia = new System.Windows.Forms.TextBox();
+            this.grpEnvironmentalCharacteristics = new System.Windows.Forms.GroupBox();
+            this.tlpEnvironmentalCharacteristics = new System.Windows.Forms.TableLayoutPanel();
+            this.lblRollingResistanceCoefficient = new System.Windows.Forms.Label();
+            this.txtRollingResistanceCoefficient = new System.Windows.Forms.TextBox();
+            this.grpAccelerationCharacteristic = new System.Windows.Forms.GroupBox();
+            this.btnSaveExcelAccelerationCharacteristic = new System.Windows.Forms.Button();
+            this.chrtAccelerationCharacteristic = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grpModelStep.SuspendLayout();
             this.tlpModelStep.SuspendLayout();
             this.grpInitialData.SuspendLayout();
@@ -146,6 +165,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.chrtTractionForce)).BeginInit();
             this.grpDynamicCharacteristic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtDynamicCharacteristic)).BeginInit();
+            this.grpMomentOfInertia.SuspendLayout();
+            this.tlpMomentOfInertia.SuspendLayout();
+            this.grpEnvironmentalCharacteristics.SuspendLayout();
+            this.tlpEnvironmentalCharacteristics.SuspendLayout();
+            this.grpAccelerationCharacteristic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chrtAccelerationCharacteristic)).BeginInit();
             this.SuspendLayout();
             // 
             // grpModelStep
@@ -211,6 +236,8 @@
             // 
             // grpInitialData
             // 
+            this.grpInitialData.Controls.Add(this.grpEnvironmentalCharacteristics);
+            this.grpInitialData.Controls.Add(this.grpMomentOfInertia);
             this.grpInitialData.Controls.Add(this.grpProjectionArea);
             this.grpInitialData.Controls.Add(this.grpGearboxCharacteristic);
             this.grpInitialData.Controls.Add(this.grpTransferBoxGearRatio);
@@ -228,7 +255,7 @@
             // grpProjectionArea
             // 
             this.grpProjectionArea.Controls.Add(this.tlpProjectionArea);
-            this.grpProjectionArea.Location = new System.Drawing.Point(523, 197);
+            this.grpProjectionArea.Location = new System.Drawing.Point(523, 242);
             this.grpProjectionArea.Name = "grpProjectionArea";
             this.grpProjectionArea.Size = new System.Drawing.Size(341, 100);
             this.grpProjectionArea.TabIndex = 14;
@@ -238,8 +265,8 @@
             // tlpProjectionArea
             // 
             this.tlpProjectionArea.ColumnCount = 2;
-            this.tlpProjectionArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.10448F));
-            this.tlpProjectionArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.89552F));
+            this.tlpProjectionArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.44F));
+            this.tlpProjectionArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.56F));
             this.tlpProjectionArea.Controls.Add(this.lblProjectionHeight, 0, 0);
             this.tlpProjectionArea.Controls.Add(this.lblProjectionWidth, 0, 1);
             this.tlpProjectionArea.Controls.Add(this.lblFillingCoefficient, 0, 2);
@@ -269,7 +296,7 @@
             // lblProjectionWidth
             // 
             this.lblProjectionWidth.AutoSize = true;
-            this.lblProjectionWidth.Location = new System.Drawing.Point(3, 32);
+            this.lblProjectionWidth.Location = new System.Drawing.Point(3, 31);
             this.lblProjectionWidth.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblProjectionWidth.Name = "lblProjectionWidth";
             this.lblProjectionWidth.Size = new System.Drawing.Size(114, 13);
@@ -279,7 +306,7 @@
             // lblFillingCoefficient
             // 
             this.lblFillingCoefficient.AutoSize = true;
-            this.lblFillingCoefficient.Location = new System.Drawing.Point(3, 59);
+            this.lblFillingCoefficient.Location = new System.Drawing.Point(3, 57);
             this.lblFillingCoefficient.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblFillingCoefficient.Name = "lblFillingCoefficient";
             this.lblFillingCoefficient.Size = new System.Drawing.Size(191, 13);
@@ -288,7 +315,7 @@
             // 
             // txtProjectionHeight
             // 
-            this.txtProjectionHeight.Location = new System.Drawing.Point(201, 3);
+            this.txtProjectionHeight.Location = new System.Drawing.Point(222, 3);
             this.txtProjectionHeight.Name = "txtProjectionHeight";
             this.txtProjectionHeight.Size = new System.Drawing.Size(100, 20);
             this.txtProjectionHeight.TabIndex = 3;
@@ -296,7 +323,7 @@
             // 
             // txtProjectionWidth
             // 
-            this.txtProjectionWidth.Location = new System.Drawing.Point(201, 30);
+            this.txtProjectionWidth.Location = new System.Drawing.Point(222, 29);
             this.txtProjectionWidth.Name = "txtProjectionWidth";
             this.txtProjectionWidth.Size = new System.Drawing.Size(100, 20);
             this.txtProjectionWidth.TabIndex = 4;
@@ -304,7 +331,7 @@
             // 
             // txtFillingCoefficient
             // 
-            this.txtFillingCoefficient.Location = new System.Drawing.Point(201, 57);
+            this.txtFillingCoefficient.Location = new System.Drawing.Point(222, 55);
             this.txtFillingCoefficient.Name = "txtFillingCoefficient";
             this.txtFillingCoefficient.Size = new System.Drawing.Size(100, 20);
             this.txtFillingCoefficient.TabIndex = 5;
@@ -316,7 +343,7 @@
             this.grpGearboxCharacteristic.Controls.Add(this.grpGearsInGearbox);
             this.grpGearboxCharacteristic.Location = new System.Drawing.Point(927, 149);
             this.grpGearboxCharacteristic.Name = "grpGearboxCharacteristic";
-            this.grpGearboxCharacteristic.Size = new System.Drawing.Size(200, 266);
+            this.grpGearboxCharacteristic.Size = new System.Drawing.Size(200, 273);
             this.grpGearboxCharacteristic.TabIndex = 13;
             this.grpGearboxCharacteristic.TabStop = false;
             this.grpGearboxCharacteristic.Text = "Характиристики коробки передач:";
@@ -326,7 +353,7 @@
             this.grpGearRatioInGearbox.Controls.Add(this.tlpGearRatioInGearbox);
             this.grpGearRatioInGearbox.Location = new System.Drawing.Point(6, 79);
             this.grpGearRatioInGearbox.Name = "grpGearRatioInGearbox";
-            this.grpGearRatioInGearbox.Size = new System.Drawing.Size(188, 181);
+            this.grpGearRatioInGearbox.Size = new System.Drawing.Size(188, 188);
             this.grpGearRatioInGearbox.TabIndex = 11;
             this.grpGearRatioInGearbox.TabStop = false;
             this.grpGearRatioInGearbox.Text = "Передаточные числа передач:";
@@ -342,7 +369,7 @@
             this.tlpGearRatioInGearbox.Name = "tlpGearRatioInGearbox";
             this.tlpGearRatioInGearbox.RowCount = 1;
             this.tlpGearRatioInGearbox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpGearRatioInGearbox.Size = new System.Drawing.Size(182, 162);
+            this.tlpGearRatioInGearbox.Size = new System.Drawing.Size(182, 169);
             this.tlpGearRatioInGearbox.TabIndex = 0;
             // 
             // flpGearRatioInGearbox
@@ -351,7 +378,7 @@
             this.flpGearRatioInGearbox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpGearRatioInGearbox.Location = new System.Drawing.Point(12, 3);
             this.flpGearRatioInGearbox.Name = "flpGearRatioInGearbox";
-            this.flpGearRatioInGearbox.Size = new System.Drawing.Size(167, 156);
+            this.flpGearRatioInGearbox.Size = new System.Drawing.Size(167, 163);
             this.flpGearRatioInGearbox.TabIndex = 0;
             // 
             // grpGearsInGearbox
@@ -487,7 +514,7 @@
             this.grpVehicleCharacteristic.Controls.Add(this.tlpVehicleCharacteristic);
             this.grpVehicleCharacteristic.Location = new System.Drawing.Point(523, 24);
             this.grpVehicleCharacteristic.Name = "grpVehicleCharacteristic";
-            this.grpVehicleCharacteristic.Size = new System.Drawing.Size(341, 170);
+            this.grpVehicleCharacteristic.Size = new System.Drawing.Size(341, 210);
             this.grpVehicleCharacteristic.TabIndex = 9;
             this.grpVehicleCharacteristic.TabStop = false;
             this.grpVehicleCharacteristic.Text = "Характеристики автомобиля:";
@@ -497,32 +524,38 @@
             this.tlpVehicleCharacteristic.ColumnCount = 2;
             this.tlpVehicleCharacteristic.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.44342F));
             this.tlpVehicleCharacteristic.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.55658F));
-            this.tlpVehicleCharacteristic.Controls.Add(this.lblWeightOnWheels, 0, 0);
-            this.tlpVehicleCharacteristic.Controls.Add(this.txtWeightOnWheels, 1, 0);
-            this.tlpVehicleCharacteristic.Controls.Add(this.lblWheelRadius, 0, 1);
-            this.tlpVehicleCharacteristic.Controls.Add(this.txtWheelRadius, 1, 1);
-            this.tlpVehicleCharacteristic.Controls.Add(this.lblFinalDriveRatio, 0, 4);
-            this.tlpVehicleCharacteristic.Controls.Add(this.txtFinalDriveRatio, 1, 4);
-            this.tlpVehicleCharacteristic.Controls.Add(this.lblCoefOfTransEfficiency, 0, 3);
-            this.tlpVehicleCharacteristic.Controls.Add(this.txtCoefOfTransEfficiency, 1, 3);
-            this.tlpVehicleCharacteristic.Controls.Add(this.lblDragCoefficient, 0, 2);
-            this.tlpVehicleCharacteristic.Controls.Add(this.txtDragCoefficient, 1, 2);
+            this.tlpVehicleCharacteristic.Controls.Add(this.lblFinalDriveRatio, 0, 6);
+            this.tlpVehicleCharacteristic.Controls.Add(this.txtFinalDriveRatio, 1, 6);
+            this.tlpVehicleCharacteristic.Controls.Add(this.lblCoefOfTransEfficiency, 0, 5);
+            this.tlpVehicleCharacteristic.Controls.Add(this.txtCoefOfTransEfficiency, 1, 5);
+            this.tlpVehicleCharacteristic.Controls.Add(this.lblDragCoefficient, 0, 4);
+            this.tlpVehicleCharacteristic.Controls.Add(this.txtDragCoefficient, 1, 4);
+            this.tlpVehicleCharacteristic.Controls.Add(this.lblWheelRadius, 0, 3);
+            this.tlpVehicleCharacteristic.Controls.Add(this.txtWheelRadius, 1, 3);
+            this.tlpVehicleCharacteristic.Controls.Add(this.lblWeightOnWheels, 0, 1);
+            this.tlpVehicleCharacteristic.Controls.Add(this.txtWeightOnWheels, 1, 1);
+            this.tlpVehicleCharacteristic.Controls.Add(this.lblVehicleMass, 0, 0);
+            this.tlpVehicleCharacteristic.Controls.Add(this.lblNumberOfWheels, 0, 2);
+            this.tlpVehicleCharacteristic.Controls.Add(this.txtVehicleMass, 1, 0);
+            this.tlpVehicleCharacteristic.Controls.Add(this.txtNumberOfWheels, 1, 2);
             this.tlpVehicleCharacteristic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpVehicleCharacteristic.Location = new System.Drawing.Point(3, 16);
             this.tlpVehicleCharacteristic.Name = "tlpVehicleCharacteristic";
-            this.tlpVehicleCharacteristic.RowCount = 5;
-            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpVehicleCharacteristic.Size = new System.Drawing.Size(335, 151);
+            this.tlpVehicleCharacteristic.RowCount = 7;
+            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tlpVehicleCharacteristic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tlpVehicleCharacteristic.Size = new System.Drawing.Size(335, 191);
             this.tlpVehicleCharacteristic.TabIndex = 0;
             // 
             // lblWeightOnWheels
             // 
             this.lblWeightOnWheels.AutoSize = true;
-            this.lblWeightOnWheels.Location = new System.Drawing.Point(3, 5);
+            this.lblWeightOnWheels.Location = new System.Drawing.Point(3, 32);
             this.lblWeightOnWheels.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblWeightOnWheels.Name = "lblWeightOnWheels";
             this.lblWeightOnWheels.Size = new System.Drawing.Size(212, 13);
@@ -531,7 +564,7 @@
             // 
             // txtWeightOnWheels
             // 
-            this.txtWeightOnWheels.Location = new System.Drawing.Point(222, 3);
+            this.txtWeightOnWheels.Location = new System.Drawing.Point(222, 30);
             this.txtWeightOnWheels.Name = "txtWeightOnWheels";
             this.txtWeightOnWheels.Size = new System.Drawing.Size(100, 20);
             this.txtWeightOnWheels.TabIndex = 7;
@@ -540,7 +573,7 @@
             // lblWheelRadius
             // 
             this.lblWheelRadius.AutoSize = true;
-            this.lblWheelRadius.Location = new System.Drawing.Point(3, 35);
+            this.lblWheelRadius.Location = new System.Drawing.Point(3, 86);
             this.lblWheelRadius.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblWheelRadius.Name = "lblWheelRadius";
             this.lblWheelRadius.Size = new System.Drawing.Size(99, 13);
@@ -549,7 +582,7 @@
             // 
             // txtWheelRadius
             // 
-            this.txtWheelRadius.Location = new System.Drawing.Point(222, 33);
+            this.txtWheelRadius.Location = new System.Drawing.Point(222, 84);
             this.txtWheelRadius.Name = "txtWheelRadius";
             this.txtWheelRadius.Size = new System.Drawing.Size(100, 20);
             this.txtWheelRadius.TabIndex = 3;
@@ -558,7 +591,7 @@
             // lblFinalDriveRatio
             // 
             this.lblFinalDriveRatio.AutoSize = true;
-            this.lblFinalDriveRatio.Location = new System.Drawing.Point(3, 125);
+            this.lblFinalDriveRatio.Location = new System.Drawing.Point(3, 167);
             this.lblFinalDriveRatio.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblFinalDriveRatio.Name = "lblFinalDriveRatio";
             this.lblFinalDriveRatio.Size = new System.Drawing.Size(208, 13);
@@ -567,7 +600,7 @@
             // 
             // txtFinalDriveRatio
             // 
-            this.txtFinalDriveRatio.Location = new System.Drawing.Point(222, 123);
+            this.txtFinalDriveRatio.Location = new System.Drawing.Point(222, 165);
             this.txtFinalDriveRatio.Name = "txtFinalDriveRatio";
             this.txtFinalDriveRatio.Size = new System.Drawing.Size(100, 20);
             this.txtFinalDriveRatio.TabIndex = 5;
@@ -576,7 +609,7 @@
             // lblCoefOfTransEfficiency
             // 
             this.lblCoefOfTransEfficiency.AutoSize = true;
-            this.lblCoefOfTransEfficiency.Location = new System.Drawing.Point(3, 95);
+            this.lblCoefOfTransEfficiency.Location = new System.Drawing.Point(3, 140);
             this.lblCoefOfTransEfficiency.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblCoefOfTransEfficiency.Name = "lblCoefOfTransEfficiency";
             this.lblCoefOfTransEfficiency.Size = new System.Drawing.Size(177, 13);
@@ -585,7 +618,7 @@
             // 
             // txtCoefOfTransEfficiency
             // 
-            this.txtCoefOfTransEfficiency.Location = new System.Drawing.Point(222, 93);
+            this.txtCoefOfTransEfficiency.Location = new System.Drawing.Point(222, 138);
             this.txtCoefOfTransEfficiency.Name = "txtCoefOfTransEfficiency";
             this.txtCoefOfTransEfficiency.Size = new System.Drawing.Size(100, 20);
             this.txtCoefOfTransEfficiency.TabIndex = 2;
@@ -594,7 +627,7 @@
             // lblDragCoefficient
             // 
             this.lblDragCoefficient.AutoSize = true;
-            this.lblDragCoefficient.Location = new System.Drawing.Point(3, 60);
+            this.lblDragCoefficient.Location = new System.Drawing.Point(3, 108);
             this.lblDragCoefficient.Name = "lblDragCoefficient";
             this.lblDragCoefficient.Size = new System.Drawing.Size(185, 26);
             this.lblDragCoefficient.TabIndex = 8;
@@ -602,7 +635,7 @@
             // 
             // txtDragCoefficient
             // 
-            this.txtDragCoefficient.Location = new System.Drawing.Point(222, 63);
+            this.txtDragCoefficient.Location = new System.Drawing.Point(222, 111);
             this.txtDragCoefficient.Name = "txtDragCoefficient";
             this.txtDragCoefficient.Size = new System.Drawing.Size(100, 20);
             this.txtDragCoefficient.TabIndex = 9;
@@ -1077,12 +1110,198 @@
             this.chrtDynamicCharacteristic.TabIndex = 0;
             this.chrtDynamicCharacteristic.Text = "chart1";
             // 
+            // lblVehicleMass
+            // 
+            this.lblVehicleMass.AutoSize = true;
+            this.lblVehicleMass.Location = new System.Drawing.Point(3, 5);
+            this.lblVehicleMass.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblVehicleMass.Name = "lblVehicleMass";
+            this.lblVehicleMass.Size = new System.Drawing.Size(100, 13);
+            this.lblVehicleMass.TabIndex = 10;
+            this.lblVehicleMass.Text = "Полная масса, кг:";
+            // 
+            // lblNumberOfWheels
+            // 
+            this.lblNumberOfWheels.AutoSize = true;
+            this.lblNumberOfWheels.Location = new System.Drawing.Point(3, 59);
+            this.lblNumberOfWheels.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblNumberOfWheels.Name = "lblNumberOfWheels";
+            this.lblNumberOfWheels.Size = new System.Drawing.Size(121, 13);
+            this.lblNumberOfWheels.TabIndex = 11;
+            this.lblNumberOfWheels.Text = "Количество колёс, шт:";
+            // 
+            // txtVehicleMass
+            // 
+            this.txtVehicleMass.Location = new System.Drawing.Point(222, 3);
+            this.txtVehicleMass.Name = "txtVehicleMass";
+            this.txtVehicleMass.Size = new System.Drawing.Size(100, 20);
+            this.txtVehicleMass.TabIndex = 12;
+            // 
+            // txtNumberOfWheels
+            // 
+            this.txtNumberOfWheels.Location = new System.Drawing.Point(222, 57);
+            this.txtNumberOfWheels.Name = "txtNumberOfWheels";
+            this.txtNumberOfWheels.Size = new System.Drawing.Size(100, 20);
+            this.txtNumberOfWheels.TabIndex = 13;
+            // 
+            // grpMomentOfInertia
+            // 
+            this.grpMomentOfInertia.Controls.Add(this.tlpMomentOfInertia);
+            this.grpMomentOfInertia.Location = new System.Drawing.Point(523, 348);
+            this.grpMomentOfInertia.Name = "grpMomentOfInertia";
+            this.grpMomentOfInertia.Size = new System.Drawing.Size(341, 74);
+            this.grpMomentOfInertia.TabIndex = 15;
+            this.grpMomentOfInertia.TabStop = false;
+            this.grpMomentOfInertia.Text = "Моменты инерции автомобиля:";
+            // 
+            // tlpMomentOfInertia
+            // 
+            this.tlpMomentOfInertia.ColumnCount = 2;
+            this.tlpMomentOfInertia.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.44F));
+            this.tlpMomentOfInertia.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.56F));
+            this.tlpMomentOfInertia.Controls.Add(this.lblMotorMomentOfInertia, 0, 0);
+            this.tlpMomentOfInertia.Controls.Add(this.lblWheelMomentOfInertia, 0, 1);
+            this.tlpMomentOfInertia.Controls.Add(this.txtMotorMomentOfInertia, 1, 0);
+            this.tlpMomentOfInertia.Controls.Add(this.txtWheelMomentOfInertia, 1, 1);
+            this.tlpMomentOfInertia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMomentOfInertia.Location = new System.Drawing.Point(3, 16);
+            this.tlpMomentOfInertia.Name = "tlpMomentOfInertia";
+            this.tlpMomentOfInertia.RowCount = 2;
+            this.tlpMomentOfInertia.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMomentOfInertia.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMomentOfInertia.Size = new System.Drawing.Size(335, 55);
+            this.tlpMomentOfInertia.TabIndex = 0;
+            // 
+            // lblMotorMomentOfInertia
+            // 
+            this.lblMotorMomentOfInertia.AutoSize = true;
+            this.lblMotorMomentOfInertia.Location = new System.Drawing.Point(3, 5);
+            this.lblMotorMomentOfInertia.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblMotorMomentOfInertia.Name = "lblMotorMomentOfInertia";
+            this.lblMotorMomentOfInertia.Size = new System.Drawing.Size(191, 13);
+            this.lblMotorMomentOfInertia.TabIndex = 0;
+            this.lblMotorMomentOfInertia.Text = "Момент инерции двигателя, кг*м^2:";
+            // 
+            // lblWheelMomentOfInertia
+            // 
+            this.lblWheelMomentOfInertia.AutoSize = true;
+            this.lblWheelMomentOfInertia.Location = new System.Drawing.Point(3, 32);
+            this.lblWheelMomentOfInertia.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblWheelMomentOfInertia.Name = "lblWheelMomentOfInertia";
+            this.lblWheelMomentOfInertia.Size = new System.Drawing.Size(175, 13);
+            this.lblWheelMomentOfInertia.TabIndex = 1;
+            this.lblWheelMomentOfInertia.Text = "Момент инерции колеса, кг*м^2:";
+            // 
+            // txtMotorMomentOfInertia
+            // 
+            this.txtMotorMomentOfInertia.Location = new System.Drawing.Point(222, 3);
+            this.txtMotorMomentOfInertia.Name = "txtMotorMomentOfInertia";
+            this.txtMotorMomentOfInertia.Size = new System.Drawing.Size(100, 20);
+            this.txtMotorMomentOfInertia.TabIndex = 2;
+            // 
+            // txtWheelMomentOfInertia
+            // 
+            this.txtWheelMomentOfInertia.Location = new System.Drawing.Point(222, 30);
+            this.txtWheelMomentOfInertia.Name = "txtWheelMomentOfInertia";
+            this.txtWheelMomentOfInertia.Size = new System.Drawing.Size(100, 20);
+            this.txtWheelMomentOfInertia.TabIndex = 3;
+            // 
+            // grpEnvironmentalCharacteristics
+            // 
+            this.grpEnvironmentalCharacteristics.Controls.Add(this.tlpEnvironmentalCharacteristics);
+            this.grpEnvironmentalCharacteristics.Location = new System.Drawing.Point(93, 286);
+            this.grpEnvironmentalCharacteristics.Name = "grpEnvironmentalCharacteristics";
+            this.grpEnvironmentalCharacteristics.Size = new System.Drawing.Size(331, 53);
+            this.grpEnvironmentalCharacteristics.TabIndex = 16;
+            this.grpEnvironmentalCharacteristics.TabStop = false;
+            this.grpEnvironmentalCharacteristics.Text = "Характеристики окружающей среды:";
+            // 
+            // tlpEnvironmentalCharacteristics
+            // 
+            this.tlpEnvironmentalCharacteristics.ColumnCount = 2;
+            this.tlpEnvironmentalCharacteristics.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.53846F));
+            this.tlpEnvironmentalCharacteristics.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.46154F));
+            this.tlpEnvironmentalCharacteristics.Controls.Add(this.lblRollingResistanceCoefficient, 0, 0);
+            this.tlpEnvironmentalCharacteristics.Controls.Add(this.txtRollingResistanceCoefficient, 1, 0);
+            this.tlpEnvironmentalCharacteristics.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpEnvironmentalCharacteristics.Location = new System.Drawing.Point(3, 16);
+            this.tlpEnvironmentalCharacteristics.Name = "tlpEnvironmentalCharacteristics";
+            this.tlpEnvironmentalCharacteristics.RowCount = 1;
+            this.tlpEnvironmentalCharacteristics.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpEnvironmentalCharacteristics.Size = new System.Drawing.Size(325, 34);
+            this.tlpEnvironmentalCharacteristics.TabIndex = 0;
+            // 
+            // lblRollingResistanceCoefficient
+            // 
+            this.lblRollingResistanceCoefficient.AutoSize = true;
+            this.lblRollingResistanceCoefficient.Location = new System.Drawing.Point(3, 5);
+            this.lblRollingResistanceCoefficient.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblRollingResistanceCoefficient.Name = "lblRollingResistanceCoefficient";
+            this.lblRollingResistanceCoefficient.Size = new System.Drawing.Size(206, 13);
+            this.lblRollingResistanceCoefficient.TabIndex = 0;
+            this.lblRollingResistanceCoefficient.Text = "Коэффициент сопротивления качению:";
+            // 
+            // txtRollingResistanceCoefficient
+            // 
+            this.txtRollingResistanceCoefficient.Location = new System.Drawing.Point(215, 3);
+            this.txtRollingResistanceCoefficient.Name = "txtRollingResistanceCoefficient";
+            this.txtRollingResistanceCoefficient.Size = new System.Drawing.Size(100, 20);
+            this.txtRollingResistanceCoefficient.TabIndex = 1;
+            // 
+            // grpAccelerationCharacteristic
+            // 
+            this.grpAccelerationCharacteristic.Controls.Add(this.chrtAccelerationCharacteristic);
+            this.grpAccelerationCharacteristic.Controls.Add(this.btnSaveExcelAccelerationCharacteristic);
+            this.grpAccelerationCharacteristic.Location = new System.Drawing.Point(638, 1051);
+            this.grpAccelerationCharacteristic.Name = "grpAccelerationCharacteristic";
+            this.grpAccelerationCharacteristic.Size = new System.Drawing.Size(560, 468);
+            this.grpAccelerationCharacteristic.TabIndex = 13;
+            this.grpAccelerationCharacteristic.TabStop = false;
+            this.grpAccelerationCharacteristic.Text = "Характеристика ускорений автомобиля:";
+            // 
+            // btnSaveExcelAccelerationCharacteristic
+            // 
+            this.btnSaveExcelAccelerationCharacteristic.Location = new System.Drawing.Point(436, 436);
+            this.btnSaveExcelAccelerationCharacteristic.Name = "btnSaveExcelAccelerationCharacteristic";
+            this.btnSaveExcelAccelerationCharacteristic.Size = new System.Drawing.Size(114, 23);
+            this.btnSaveExcelAccelerationCharacteristic.TabIndex = 0;
+            this.btnSaveExcelAccelerationCharacteristic.Text = "Сохранить в Excel";
+            this.btnSaveExcelAccelerationCharacteristic.UseVisualStyleBackColor = true;
+            // 
+            // chrtAccelerationCharacteristic
+            // 
+            chartArea6.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea6.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea6.AxisX.MinorGrid.Enabled = true;
+            chartArea6.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea6.AxisX.Title = "Скорость, км/ч";
+            chartArea6.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea6.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea6.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea6.AxisY.MinorGrid.Enabled = true;
+            chartArea6.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea6.AxisY.Title = "Ускорение, м/с^2";
+            chartArea6.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea6.Name = "ChartArea1";
+            this.chrtAccelerationCharacteristic.ChartAreas.Add(chartArea6);
+            this.chrtAccelerationCharacteristic.Dock = System.Windows.Forms.DockStyle.Top;
+            legend6.BorderColor = System.Drawing.Color.Black;
+            legend6.DockedToChartArea = "ChartArea1";
+            legend6.Name = "Legend1";
+            this.chrtAccelerationCharacteristic.Legends.Add(legend6);
+            this.chrtAccelerationCharacteristic.Location = new System.Drawing.Point(3, 16);
+            this.chrtAccelerationCharacteristic.Name = "chrtAccelerationCharacteristic";
+            this.chrtAccelerationCharacteristic.Size = new System.Drawing.Size(554, 408);
+            this.chrtAccelerationCharacteristic.TabIndex = 1;
+            this.chrtAccelerationCharacteristic.Text = "chart1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1242, 641);
+            this.Controls.Add(this.grpAccelerationCharacteristic);
             this.Controls.Add(this.grpDynamicCharacteristic);
             this.Controls.Add(this.grpTractionCharacteristic);
             this.Controls.Add(this.grpExternalCharacteristic);
@@ -1126,6 +1345,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.chrtTractionForce)).EndInit();
             this.grpDynamicCharacteristic.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chrtDynamicCharacteristic)).EndInit();
+            this.grpMomentOfInertia.ResumeLayout(false);
+            this.tlpMomentOfInertia.ResumeLayout(false);
+            this.tlpMomentOfInertia.PerformLayout();
+            this.grpEnvironmentalCharacteristics.ResumeLayout(false);
+            this.tlpEnvironmentalCharacteristics.ResumeLayout(false);
+            this.tlpEnvironmentalCharacteristics.PerformLayout();
+            this.grpAccelerationCharacteristic.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chrtAccelerationCharacteristic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1209,6 +1436,23 @@
         private System.Windows.Forms.GroupBox grpDynamicCharacteristic;
         private System.Windows.Forms.Button btnSaveExcelDynamicCharacteristic;
         private System.Windows.Forms.DataVisualization.Charting.Chart chrtDynamicCharacteristic;
+        private System.Windows.Forms.Label lblVehicleMass;
+        private System.Windows.Forms.Label lblNumberOfWheels;
+        private System.Windows.Forms.TextBox txtVehicleMass;
+        private System.Windows.Forms.TextBox txtNumberOfWheels;
+        private System.Windows.Forms.GroupBox grpMomentOfInertia;
+        private System.Windows.Forms.TableLayoutPanel tlpMomentOfInertia;
+        private System.Windows.Forms.Label lblMotorMomentOfInertia;
+        private System.Windows.Forms.Label lblWheelMomentOfInertia;
+        private System.Windows.Forms.TextBox txtMotorMomentOfInertia;
+        private System.Windows.Forms.TextBox txtWheelMomentOfInertia;
+        private System.Windows.Forms.GroupBox grpEnvironmentalCharacteristics;
+        private System.Windows.Forms.TableLayoutPanel tlpEnvironmentalCharacteristics;
+        private System.Windows.Forms.Label lblRollingResistanceCoefficient;
+        private System.Windows.Forms.TextBox txtRollingResistanceCoefficient;
+        private System.Windows.Forms.GroupBox grpAccelerationCharacteristic;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chrtAccelerationCharacteristic;
+        private System.Windows.Forms.Button btnSaveExcelAccelerationCharacteristic;
     }
 }
 
