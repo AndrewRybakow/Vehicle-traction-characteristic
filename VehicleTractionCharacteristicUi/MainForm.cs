@@ -227,7 +227,7 @@ namespace VehicleTractionCharacteristicUi
 
             // Add series to chart
 
-            for (int i = 1; i <= flpGearRatioInGearbox.Controls.Count; i++)
+            for (int i = 1; i <= Vehicle.Gears.Count; i++)
             {
                 chrtTractionForce.Series.Add(new Series
                 {
@@ -241,7 +241,7 @@ namespace VehicleTractionCharacteristicUi
 
             List<List<TractionForce>> tractionForceByGear = new List<List<TractionForce>>();
 
-            for (int i = 1; i <= flpGearRatioInGearbox.Controls.Count; i++)
+            for (int i = 1; i <= Vehicle.Gears.Count; i++)
             {
                 var list = (from tractionForce in Vehicle.TractionForce
                             where tractionForce.GearNumber == i
@@ -256,7 +256,7 @@ namespace VehicleTractionCharacteristicUi
 
             // Add points to series
 
-            for (int i = 0; i < flpGearRatioInGearbox.Controls.Count; i++)
+            for (int i = 0; i < Vehicle.Gears.Count; i++)
             {
                 foreach (TractionForce item in tractionForceByGear[i])
                 {
@@ -340,7 +340,7 @@ namespace VehicleTractionCharacteristicUi
 
                 List<List<TractionForce>> tractionForceByGear = new List<List<TractionForce>>();
 
-                for (int i = 1; i <= flpGearRatioInGearbox.Controls.Count; i++)
+                for (int i = 1; i <= Vehicle.Gears.Count; i++)
                 {
                     var list = (from tractionForce in Vehicle.TractionForce
                                 where tractionForce.GearNumber == i
