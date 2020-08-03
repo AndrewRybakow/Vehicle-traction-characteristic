@@ -36,6 +36,7 @@ namespace VehicleTractionCharacteristicUi
             BuildDynamicFactorCharacteristicGraph();
 
             CalculateAccelerationCharacterisctic();
+            BuildAccelerationCharacteristicGraph();
         }
 
         private void btnAddGearToGearbox_Click(object sender, EventArgs e)
@@ -569,6 +570,50 @@ namespace VehicleTractionCharacteristicUi
                                                                                            Vehicle.DynamicFactor);
 
             Vehicle.Acceleration = accelerationCharacteristic.Caclculate();
+        }
+
+        private void BuildAccelerationCharacteristicGraph()
+        {
+            chrtAccelerationCharacteristic.Series.Clear();
+
+            // Add series to chart
+
+            for (int i = 1; i <= Vehicle.Gears.Count; i++)
+            {
+                chrtAccelerationCharacteristic.Series.Add(new Series
+                {
+                    Name = $"Gear #{i}",
+                    ChartType = SeriesChartType.Spline,
+                    BorderWidth = 3
+                });
+            }
+
+            // Get points
+
+            List<List<Acceleration>> accelerationByGear = new List<List<Acceleration>>();
+
+            for (int i = 1; i <= Vehicle.Gears.Count; i++)
+            {
+                var list = (from acceleration in Vehicle.Acceleration
+                            where acceleration.GearNumber == i
+                            select new Acceleration
+                            {
+                                Speed = Math.Round(acceleration.Speed, 2),
+                                AccelerationValue = acceleration.AccelerationValue
+                            }).ToList();
+
+                accelerationByGear.Add(list);
+            }
+
+            // Add points to series
+
+            for (int i = 0; i < Vehicle.Gears.Count; i++)
+            {
+                foreach (Acceleration item in accelerationByGear[i])
+                {
+                    chrtAccelerationCharacteristic.Series[$"Gear #{i + 1}"].Points.AddXY(item.Speed, item.AccelerationValue);
+                }
+            }
         }
     }
 }
