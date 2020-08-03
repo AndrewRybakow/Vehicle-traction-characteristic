@@ -34,6 +34,8 @@ namespace VehicleTractionCharacteristicUi
 
             CalculateDynamicFactorCharacterisctic();
             BuildDynamicFactorCharacteristicGraph();
+
+            CalculateAccelerationCharacterisctic();
         }
 
         private void btnAddGearToGearbox_Click(object sender, EventArgs e)
@@ -549,6 +551,24 @@ namespace VehicleTractionCharacteristicUi
                     ExcelFile.SaveAs(file);
                 }
             }
+        }
+
+
+        private void CalculateAccelerationCharacterisctic()
+        {
+            AccelerationController accelerationCharacteristic = new AccelerationController(Convert.ToDouble(txtVehicleMass.Text),
+                                                                                           Convert.ToInt32(txtNumberOfWheels.Text),
+                                                                                           Convert.ToDouble(txtWheelRadius.Text),
+                                                                                           Convert.ToDouble(txtRollingResistanceCoefficient.Text),
+                                                                                           Convert.ToDouble(txtWheelMomentOfInertia.Text),
+                                                                                           Convert.ToDouble(txtMotorMomentOfInertia.Text),
+                                                                                           Convert.ToDouble(txtFinalDriveRatio.Text),
+                                                                                           Convert.ToDouble(txtCoefOfTransEfficiency.Text),
+                                                                                           Vehicle.Engine,
+                                                                                           Vehicle.Gears,
+                                                                                           Vehicle.DynamicFactor);
+
+            Vehicle.Acceleration = accelerationCharacteristic.Caclculate();
         }
     }
 }

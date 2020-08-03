@@ -54,6 +54,8 @@
             this.tlpEnvironmentalCharacteristics = new System.Windows.Forms.TableLayoutPanel();
             this.lblRollingResistanceCoefficient = new System.Windows.Forms.Label();
             this.txtRollingResistanceCoefficient = new System.Windows.Forms.TextBox();
+            this.lblAirDensity = new System.Windows.Forms.Label();
+            this.txtAirDensity = new System.Windows.Forms.TextBox();
             this.grpMomentOfInertia = new System.Windows.Forms.GroupBox();
             this.tlpMomentOfInertia = new System.Windows.Forms.TableLayoutPanel();
             this.lblMotorMomentOfInertia = new System.Windows.Forms.Label();
@@ -137,8 +139,6 @@
             this.grpAccelerationCharacteristic = new System.Windows.Forms.GroupBox();
             this.chrtAccelerationCharacteristic = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnSaveExcelAccelerationCharacteristic = new System.Windows.Forms.Button();
-            this.lblAirDensity = new System.Windows.Forms.Label();
-            this.txtAirDensity = new System.Windows.Forms.TextBox();
             this.grpModelStep.SuspendLayout();
             this.tlpModelStep.SuspendLayout();
             this.grpInitialData.SuspendLayout();
@@ -298,6 +298,25 @@
             this.txtRollingResistanceCoefficient.Name = "txtRollingResistanceCoefficient";
             this.txtRollingResistanceCoefficient.Size = new System.Drawing.Size(100, 20);
             this.txtRollingResistanceCoefficient.TabIndex = 1;
+            this.txtRollingResistanceCoefficient.Text = "0.015";
+            // 
+            // lblAirDensity
+            // 
+            this.lblAirDensity.AutoSize = true;
+            this.lblAirDensity.Location = new System.Drawing.Point(3, 5);
+            this.lblAirDensity.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblAirDensity.Name = "lblAirDensity";
+            this.lblAirDensity.Size = new System.Drawing.Size(149, 13);
+            this.lblAirDensity.TabIndex = 2;
+            this.lblAirDensity.Text = "Плотность воздуха, кг/м^3:";
+            // 
+            // txtAirDensity
+            // 
+            this.txtAirDensity.Location = new System.Drawing.Point(215, 3);
+            this.txtAirDensity.Name = "txtAirDensity";
+            this.txtAirDensity.Size = new System.Drawing.Size(100, 20);
+            this.txtAirDensity.TabIndex = 3;
+            this.txtAirDensity.Text = "1.25";
             // 
             // grpMomentOfInertia
             // 
@@ -353,6 +372,7 @@
             this.txtMotorMomentOfInertia.Name = "txtMotorMomentOfInertia";
             this.txtMotorMomentOfInertia.Size = new System.Drawing.Size(100, 20);
             this.txtMotorMomentOfInertia.TabIndex = 2;
+            this.txtMotorMomentOfInertia.Text = "0.864";
             // 
             // txtWheelMomentOfInertia
             // 
@@ -360,6 +380,7 @@
             this.txtWheelMomentOfInertia.Name = "txtWheelMomentOfInertia";
             this.txtWheelMomentOfInertia.Size = new System.Drawing.Size(100, 20);
             this.txtWheelMomentOfInertia.TabIndex = 3;
+            this.txtWheelMomentOfInertia.Text = "19.25";
             // 
             // grpProjectionArea
             // 
@@ -776,6 +797,7 @@
             this.txtVehicleMass.Name = "txtVehicleMass";
             this.txtVehicleMass.Size = new System.Drawing.Size(100, 20);
             this.txtVehicleMass.TabIndex = 12;
+            this.txtVehicleMass.Text = "10425";
             // 
             // txtNumberOfWheels
             // 
@@ -783,6 +805,7 @@
             this.txtNumberOfWheels.Name = "txtNumberOfWheels";
             this.txtNumberOfWheels.Size = new System.Drawing.Size(100, 20);
             this.txtNumberOfWheels.TabIndex = 13;
+            this.txtNumberOfWheels.Text = "6";
             // 
             // btnCalculate
             // 
@@ -1299,24 +1322,6 @@
             this.btnSaveExcelAccelerationCharacteristic.TabIndex = 0;
             this.btnSaveExcelAccelerationCharacteristic.Text = "Сохранить в Excel";
             this.btnSaveExcelAccelerationCharacteristic.UseVisualStyleBackColor = true;
-            // 
-            // lblAirDensity
-            // 
-            this.lblAirDensity.AutoSize = true;
-            this.lblAirDensity.Location = new System.Drawing.Point(3, 5);
-            this.lblAirDensity.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.lblAirDensity.Name = "lblAirDensity";
-            this.lblAirDensity.Size = new System.Drawing.Size(149, 13);
-            this.lblAirDensity.TabIndex = 2;
-            this.lblAirDensity.Text = "Плотность воздуха, кг/м^3:";
-            // 
-            // txtAirDensity
-            // 
-            this.txtAirDensity.Location = new System.Drawing.Point(215, 3);
-            this.txtAirDensity.Name = "txtAirDensity";
-            this.txtAirDensity.Size = new System.Drawing.Size(100, 20);
-            this.txtAirDensity.TabIndex = 3;
-            this.txtAirDensity.Text = "1.25";
             // 
             // MainForm
             // 
