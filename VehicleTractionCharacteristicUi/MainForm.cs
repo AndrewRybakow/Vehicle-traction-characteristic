@@ -64,7 +64,11 @@ namespace VehicleTractionCharacteristicUi
             SaveDynamicFactorCharacteristicToExcel();
         }
 
-        
+        private void btnSaveExcelAccelerationCharacteristic_Click(object sender, EventArgs e)
+        {
+            SaveAccelerationCharacteristicToExcel();
+        }
+
 
         private void CalculateExternalEngineCharacteristic()
         {
@@ -612,6 +616,136 @@ namespace VehicleTractionCharacteristicUi
                 foreach (Acceleration item in accelerationByGear[i])
                 {
                     chrtAccelerationCharacteristic.Series[$"Gear #{i + 1}"].Points.AddXY(item.Speed, item.AccelerationValue);
+                }
+            }
+        }
+
+        private void SaveAccelerationCharacteristicToExcel()
+        {
+            using (var ExcelFile = new ExcelPackage())
+            {
+                ExcelWorksheet workSheet = ExcelFile.Workbook.Worksheets.Add("ХАРАКТЕРИСТИКА УСКОРЕНИЙ");
+
+                char step;
+
+                #region Table headers                
+
+                workSheet.Cells["B1"].Value = "ХАРАКТЕРИСТИКА УСКОРЕНИЙ АВТОМОБИЛЯ";
+                workSheet.Cells["B1:F1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells["B1:F1"].Style.Fill.BackgroundColor.SetColor(Color.Red);
+
+                workSheet.Cells["B2"].Value = "Модель автомобиля:";
+                workSheet.Cells["B2:D2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells["B2:D2"].Style.Fill.BackgroundColor.SetColor(Color.Orange);
+
+                workSheet.Cells["E2"].Value = txtCarModel.Text;
+                workSheet.Cells["E2:F2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells["E2:F2"].Style.Fill.BackgroundColor.SetColor(Color.YellowGreen);
+
+                workSheet.Cells["B4"].Value = "Зависимость ускорений j и обратных ускорений 1/j от скорости V при разгоне автомобиля на каждой передаче:";
+                workSheet.Cells["B4:M4"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells["B4:M4"].Style.Fill.BackgroundColor.SetColor(Color.Orange);
+
+                step = 'B';
+                for (int i = 0; i < Vehicle.Gears.Count; i++)
+                {
+                    workSheet.Cells[$"{step}5"].Value = Convert.ToString($"Передача #{Vehicle.Gears[i].GearNumber}");
+
+                    workSheet.Cells[$"{step}5"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}5"].Style.Fill.BackgroundColor.SetColor(Color.YellowGreen);
+
+                    workSheet.Cells[$"{step}5"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                    workSheet.Cells[$"{step}5:{(char)(((int)step) + 2)}5"].Merge = true;
+
+                    step = (char)(((int)step) + 3);
+                }
+
+                step = 'B';
+                for (int i = 0; i < Vehicle.Gears.Count; i++)
+                {
+                    workSheet.Cells[$"{step}6"].Value = "V";
+                    workSheet.Cells[$"{step}6"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}6"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B050"));
+
+                    workSheet.Cells[$"{step}7"].Value = "км/ч";
+                    workSheet.Cells[$"{step}7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}7"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B050"));
+
+                    step = (char)(((int)step) + 3);
+                }
+
+                step = 'C';
+                for (int i = 0; i < Vehicle.Gears.Count; i++)
+                {
+                    workSheet.Cells[$"{step}6"].Value = "j";
+                    workSheet.Cells[$"{step}6"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}6"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B0F0"));
+
+                    workSheet.Cells[$"{step}7"].Value = "м/с^2";
+                    workSheet.Cells[$"{step}7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}7"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B0F0"));
+
+                    step = (char)(((int)step) + 3);
+                }
+
+                step = 'D';
+                for (int i = 0; i < Vehicle.Gears.Count; i++)
+                {
+                    workSheet.Cells[$"{step}6"].Value = "1/j";
+                    workSheet.Cells[$"{step}6"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}6"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#8EA9DB"));
+
+                    workSheet.Cells[$"{step}7"].Value = "с^2/м";
+                    workSheet.Cells[$"{step}7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells[$"{step}7"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#8EA9DB"));
+
+                    step = (char)(((int)step) + 3);
+                }
+
+                #endregion
+
+                #region Table data                
+
+                List<List<Acceleration>> accelerationByGear = new List<List<Acceleration>>();
+
+                for (int i = 1; i <= Vehicle.Gears.Count; i++)
+                {
+                    var list = (from acceleration in Vehicle.Acceleration
+                                where acceleration.GearNumber == i
+                                select new Acceleration
+                                {
+                                    Speed = acceleration.Speed,
+                                    AccelerationValue = acceleration.AccelerationValue,
+                                    ReciprocalAccelerationValue = acceleration.ReciprocalAccelerationValue
+                                }).ToList();
+
+                    accelerationByGear.Add(list);
+                }
+
+                step = 'B';
+                for (int i = 0; i < accelerationByGear.Count; i++)
+                {
+                    for (int j = 0; j < Vehicle.Engine.Count; j++)
+                    {
+                        workSheet.Cells[$"{step}{8 + j}"].Value = (accelerationByGear[i][j].Speed);
+                        workSheet.Cells[$"{(char)(((int)step) + 1)}{8 + j}"].Value = (accelerationByGear[i][j].AccelerationValue);
+                        workSheet.Cells[$"{(char)(((int)step) + 2)}{8 + j}"].Value = (accelerationByGear[i][j].ReciprocalAccelerationValue);
+                    }
+
+                    step = (char)(((int)step) + 3);
+                }
+
+                #endregion
+
+                var saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel files|*.xlsx|All files|*.*";
+                saveFileDialog.FileName = "Характеристика ускорений автомобиля " + txtCarModel.Text + " " + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    FileInfo file = new FileInfo(saveFileDialog.FileName);
+                    ExcelFile.SaveAs(file);
                 }
             }
         }
