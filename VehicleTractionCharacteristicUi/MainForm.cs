@@ -49,6 +49,16 @@ namespace VehicleTractionCharacteristicUi
             DeleteGearInGearbox();
         }
 
+        private void rdoTransferBoxNo_CheckedChanged(object sender, EventArgs e)
+        {
+            DisableTrasferBox();
+        }
+
+        private void rdoTransferBoxYes_CheckedChanged(object sender, EventArgs e)
+        {
+            EnableTrasferBox();
+        }
+
         private void btnSaveExcelExternalCharacteristic_Click(object sender, EventArgs e)
         {
             SaveExternalEngienCharacteristicToExcel();
@@ -200,6 +210,24 @@ namespace VehicleTractionCharacteristicUi
             }
 
             Vehicle.Gears = gears;
+        }
+
+        private void DisableTrasferBox()
+        {
+            txtTransferBoxTopGearRatio.Text = Convert.ToString(1);
+            txtTransferBoxTopGearRatio.Enabled = false;
+
+            txtTransferBoxLowerGearRatio.Text = Convert.ToString(1);
+            txtTransferBoxLowerGearRatio.Enabled = false;
+        }
+
+        private void EnableTrasferBox()
+        {
+            txtTransferBoxTopGearRatio.Text = String.Empty;
+            txtTransferBoxTopGearRatio.Enabled = true;
+
+            txtTransferBoxLowerGearRatio.Text = String.Empty;
+            txtTransferBoxLowerGearRatio.Enabled = true;
         }
 
 
@@ -749,5 +777,7 @@ namespace VehicleTractionCharacteristicUi
                 }
             }
         }
+
+        
     }
 }
