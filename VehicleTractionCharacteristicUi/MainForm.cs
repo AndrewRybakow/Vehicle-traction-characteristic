@@ -35,8 +35,8 @@ namespace VehicleTractionCharacteristicUi
             CalculateDynamicFactorCharacterisctic();
             BuildDynamicFactorCharacteristicGraph();
 
-            //CalculateAccelerationCharacterisctic();
-            //BuildAccelerationCharacteristicGraph();
+            CalculateAccelerationCharacterisctic();
+            BuildAccelerationCharacteristicGraph();
         }
 
         private void btnAddGearToGearbox_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace VehicleTractionCharacteristicUi
 
         private void btnSaveExcelAccelerationCharacteristic_Click(object sender, EventArgs e)
         {
-            //SaveAccelerationCharacteristicToExcel();
+            SaveAccelerationCharacteristicToExcel();
         }
 
 
@@ -835,7 +835,6 @@ namespace VehicleTractionCharacteristicUi
                                                                                            Convert.ToDouble(txtMotorMomentOfInertia.Text),
                                                                                            Convert.ToDouble(txtFinalDriveRatio.Text),
                                                                                            Convert.ToDouble(txtCoefOfTransEfficiency.Text),
-                                                                                           Vehicle.Engine,
                                                                                            Vehicle.Gears,
                                                                                            Vehicle.DynamicFactor);
 
@@ -927,6 +926,14 @@ namespace VehicleTractionCharacteristicUi
                     step = (char)(((int)step) + 3);
                 }
 
+                step = 'D';
+                for (int i = 0; i < Vehicle.Gears.Count - 1; i++)
+                {
+                    workSheet.Cells[$"{step}6:{step}{7 + Vehicle.Engine.Count}"].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+
+                    step = (char)(((int)step) + 3);
+                }
+
                 step = 'B';
                 for (int i = 0; i < Vehicle.Gears.Count; i++)
                 {
@@ -1004,6 +1011,8 @@ namespace VehicleTractionCharacteristicUi
 
                 #endregion
 
+                #region Save dialog
+
                 var saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "Excel files|*.xlsx|All files|*.*";
                 saveFileDialog.FileName = "Характеристика ускорений автомобиля " + txtCarModel.Text + " " + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx";
@@ -1013,6 +1022,8 @@ namespace VehicleTractionCharacteristicUi
                     FileInfo file = new FileInfo(saveFileDialog.FileName);
                     ExcelFile.SaveAs(file);
                 }
+
+                #endregion
             }
         }
 

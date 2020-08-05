@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using VehicleTractionCharacteristicBl.Model;
+using System.Linq;
 
 namespace VehicleTractionCharacteristicBl.Controller
 {
@@ -21,8 +22,6 @@ namespace VehicleTractionCharacteristicBl.Controller
         double FinalDriveRatio { get; }
 
         double CoefOfTransEfficiency { get; }
-
-        readonly List<Engine> Engine = new List<Engine>();
 
         readonly List<Gear> Gears = new List<Gear>();
 
@@ -49,7 +48,6 @@ namespace VehicleTractionCharacteristicBl.Controller
                                       double motorMomentOfInertia,
                                       double finalDriveRatio,
                                       double coefOfTransEfficiency,
-                                      List<Engine> engine,
                                       List<Gear> gears,
                                       List<DynamicFactor> dynamicFactor)
         {
@@ -61,7 +59,6 @@ namespace VehicleTractionCharacteristicBl.Controller
             MotorMomentOfInertia = motorMomentOfInertia;
             FinalDriveRatio = finalDriveRatio;
             CoefOfTransEfficiency = coefOfTransEfficiency;
-            Engine = engine;
             Gears = gears;
             DynamicFactor = dynamicFactor;
         }
@@ -100,24 +97,24 @@ namespace VehicleTractionCharacteristicBl.Controller
         {
             List<Acceleration> accelerationCharacteristic = new List<Acceleration>();
 
-            List<int> number = new List<int>();
+            List<DynamicFactor> dynamicFactorByGearInGearbox = new List<DynamicFactor>();
 
-            for (int i = 0; i < Gears.Count; i++)
-            {
-                for (int j = 0; j < Engine.Count; j++)
-                {
-                    number.Add(Gears[i].GearNumber - 1);
-                }
-            }
+            // Get dynamic factor for gears in gearbox
 
-            for (int j = 0; j < DynamicFactor.Count; j++)
+            dynamicFactorByGearInGearbox = (from dynamicfactor in DynamicFactor
+                                            where dynamicfactor.GearNumber > 0 && dynamicfactor.GearNumber <= Gears.Count
+                                            select dynamicfactor).ToList();
+
+            // Calculate acceleration characteristic
+
+            for (int j = 0; j < dynamicFactorByGearInGearbox.Count; j++)
             {
                 accelerationCharacteristic.Add(new Acceleration
                 {
-                    GearNumber = DynamicFactor[j].GearNumber,
+                    GearNumber = dynamicFactorByGearInGearbox[j].GearNumber,
                     Speed = DynamicFactor[j].Speed,
-                    AccelerationValue = (((DynamicFactor[j].DynamicFactorValue / 100) - CoefficientOfRollingResistance(DynamicFactor[j].Speed)) / (CoefficientOfInertia(Gears[number[j]].GearRatio))) * 9.81,
-                    ReciprocalAccelerationValue = 1 / ((((DynamicFactor[j].DynamicFactorValue / 100) - CoefficientOfRollingResistance(DynamicFactor[j].Speed)) / (CoefficientOfInertia(Gears[number[j]].GearRatio))) * 9.81)
+                    AccelerationValue = (((dynamicFactorByGearInGearbox[j].DynamicFactorValue / 100) - CoefficientOfRollingResistance(dynamicFactorByGearInGearbox[j].Speed)) / (CoefficientOfInertia(Gears[dynamicFactorByGearInGearbox[j].GearNumber - 1].GearRatio))) * 9.81,
+                    ReciprocalAccelerationValue = 1 / ((((dynamicFactorByGearInGearbox[j].DynamicFactorValue / 100) - CoefficientOfRollingResistance(dynamicFactorByGearInGearbox[j].Speed)) / (CoefficientOfInertia(Gears[dynamicFactorByGearInGearbox[j].GearNumber - 1].GearRatio))) * 9.81)
                 });
             }
 
