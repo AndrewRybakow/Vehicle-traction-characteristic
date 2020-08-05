@@ -32,8 +32,8 @@ namespace VehicleTractionCharacteristicUi
             CalculateTractionForceCharacteristic();
             BuildTractionForceCharacteristicGraph();
 
-            //CalculateDynamicFactorCharacterisctic();
-            //BuildDynamicFactorCharacteristicGraph();
+            CalculateDynamicFactorCharacterisctic();
+            BuildDynamicFactorCharacteristicGraph();
 
             //CalculateAccelerationCharacterisctic();
             //BuildAccelerationCharacteristicGraph();
@@ -71,7 +71,7 @@ namespace VehicleTractionCharacteristicUi
 
         private void btnSaveExcelDynamicCharacteristic_Click(object sender, EventArgs e)
         {
-            //SaveDynamicFactorCharacteristicToExcel();
+            SaveDynamicFactorCharacteristicToExcel();
         }
 
         private void btnSaveExcelAccelerationCharacteristic_Click(object sender, EventArgs e)
@@ -554,6 +554,16 @@ namespace VehicleTractionCharacteristicUi
 
             // Add series to chart
 
+            if (rdoTransferBoxYes.Checked)
+            {
+                chrtDynamicCharacteristic.Series.Add(new Series
+                {
+                    Name = "lower Gear #1",
+                    ChartType = SeriesChartType.Spline,
+                    BorderWidth = 3
+                });
+            }
+
             for (int i = 1; i <= Vehicle.Gears.Count; i++)
             {
                 chrtDynamicCharacteristic.Series.Add(new Series
@@ -567,6 +577,19 @@ namespace VehicleTractionCharacteristicUi
             // Get points
 
             List<List<DynamicFactor>> dynamicFactorByGear = new List<List<DynamicFactor>>();
+
+            if (rdoTransferBoxYes.Checked)
+            {
+                var list = (from dynamicFactor in Vehicle.DynamicFactor
+                            where dynamicFactor.GearNumber == 0
+                            select new DynamicFactor
+                            {
+                                Speed = Math.Round(dynamicFactor.Speed, 2),
+                                DynamicFactorValue = dynamicFactor.DynamicFactorValue
+                            }).ToList();
+
+                dynamicFactorByGear.Add(list);
+            }
 
             for (int i = 1; i <= Vehicle.Gears.Count; i++)
             {
@@ -583,11 +606,29 @@ namespace VehicleTractionCharacteristicUi
 
             // Add points to series
 
-            for (int i = 0; i < Vehicle.Gears.Count; i++)
+            if (rdoTransferBoxYes.Checked)
             {
-                foreach (DynamicFactor item in dynamicFactorByGear[i])
+                foreach (DynamicFactor item in dynamicFactorByGear[0])
                 {
-                    chrtDynamicCharacteristic.Series[$"Gear #{i + 1}"].Points.AddXY(item.Speed, item.DynamicFactorValue);
+                    chrtDynamicCharacteristic.Series["lower Gear #1"].Points.AddXY(item.Speed, item.DynamicFactorValue);
+                }
+
+                for (int i = 1; i < Vehicle.Gears.Count + 1; i++)
+                {
+                    foreach (DynamicFactor item in dynamicFactorByGear[i])
+                    {
+                        chrtDynamicCharacteristic.Series[$"Gear #{i}"].Points.AddXY(item.Speed, item.DynamicFactorValue);
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < Vehicle.Gears.Count; i++)
+                {
+                    foreach (DynamicFactor item in dynamicFactorByGear[i])
+                    {
+                        chrtDynamicCharacteristic.Series[$"Gear #{i + 1}"].Points.AddXY(item.Speed, item.DynamicFactorValue);
+                    }
                 }
             }
         }
@@ -599,6 +640,7 @@ namespace VehicleTractionCharacteristicUi
                 ExcelWorksheet workSheet = ExcelFile.Workbook.Worksheets.Add("ДИНАМИЧЕСКАЯ ХАРАКТЕРИСТИКА");
 
                 char step;
+                int indent = 0; // it's 0 if transfer box is OFF and 2 if transfer box is ON
 
                 #region Table headers
 
@@ -618,7 +660,67 @@ namespace VehicleTractionCharacteristicUi
                 workSheet.Cells["B4:H4"].Style.Fill.PatternType = ExcelFillStyle.Solid;
                 workSheet.Cells["B4:H4"].Style.Fill.BackgroundColor.SetColor(Color.Orange);
 
+
+
+                if (rdoTransferBoxYes.Checked)
+                {
+                    // Set header for lower gear
+
+                    workSheet.Cells["B5"].Value = Convert.ToString("Передача #1 пониж.");
+                    workSheet.Cells["B5"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells["B5"].Style.Fill.BackgroundColor.SetColor(Color.YellowGreen);
+                    workSheet.Cells["B5"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    workSheet.Cells[$"B5:C5"].Merge = true;
+
+                    workSheet.Cells["B6"].Value = "V";
+                    workSheet.Cells["B6"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells["B6"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B050"));
+
+                    workSheet.Cells["B7"].Value = "км/ч";
+                    workSheet.Cells["B7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells["B7"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B050"));
+
+                    workSheet.Cells["C6"].Value = "D";
+                    workSheet.Cells["C6"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells["C6"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B0F0"));
+
+                    workSheet.Cells["C7"].Value = "%";
+                    workSheet.Cells["C7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    workSheet.Cells["C7"].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#00B0F0"));
+
+                    workSheet.Cells[$"C6:C{7 + Vehicle.Engine.Count}"].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+
+
+                    // Get data for lower gear
+
+                    List<DynamicFactor> dynamicFactorOnLowerGear = new List<DynamicFactor>();
+
+                    dynamicFactorOnLowerGear = (from dynamicFactor in Vehicle.DynamicFactor
+                                                where dynamicFactor.GearNumber == 0
+                                                select new DynamicFactor
+                                                {
+                                                    Speed = dynamicFactor.Speed,
+                                                    DynamicFactorValue = dynamicFactor.DynamicFactorValue
+                                                }).ToList();
+
+
+                    // Write data to file
+
+                    step = 'B';
+                    for (int j = 0; j < Vehicle.Engine.Count; j++)
+                    {
+                        workSheet.Cells[$"{step}{8 + j}"].Value = (dynamicFactorOnLowerGear[j].Speed);
+                        workSheet.Cells[$"{(char)(((int)step) + 1)}{8 + j}"].Value = (dynamicFactorOnLowerGear[j].DynamicFactorValue);
+                    }
+
+
+                    // Set indent for other gears
+
+                    indent = 2;
+                }
+
                 step = 'B';
+                step = (char)(((int)step) + indent);
                 for (int i = 0; i < Vehicle.Gears.Count; i++)
                 {
                     workSheet.Cells[$"{step}5"].Value = Convert.ToString($"Передача #{Vehicle.Gears[i].GearNumber}");
@@ -633,7 +735,17 @@ namespace VehicleTractionCharacteristicUi
                     step = (char)(((int)step) + 2);
                 }
 
+                step = 'C';
+                step = (char)(((int)step) + indent);
+                for (int i = 0; i < Vehicle.Gears.Count - 1; i++)
+                {
+                    workSheet.Cells[$"{step}6:{step}{7 + Vehicle.Engine.Count}"].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+
+                    step = (char)(((int)step) + 2);
+                }
+
                 step = 'B';
+                step = (char)(((int)step) + indent);
                 for (int i = 0; i < Vehicle.Gears.Count; i++)
                 {
                     workSheet.Cells[$"{step}6"].Value = "V";
@@ -648,6 +760,7 @@ namespace VehicleTractionCharacteristicUi
                 }
 
                 step = 'C';
+                step = (char)(((int)step) + indent);
                 for (int i = 0; i < Vehicle.Gears.Count; i++)
                 {
                     workSheet.Cells[$"{step}6"].Value = "D";
@@ -681,6 +794,7 @@ namespace VehicleTractionCharacteristicUi
                 }
 
                 step = 'B';
+                step = (char)(((int)step) + indent);
                 for (int i = 0; i < dynamicFactorByGear.Count; i++)
                 {
                     for (int j = 0; j < Vehicle.Engine.Count; j++)
@@ -694,6 +808,8 @@ namespace VehicleTractionCharacteristicUi
 
                 #endregion
 
+                #region Save dialog
+
                 var saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "Excel files|*.xlsx|All files|*.*";
                 saveFileDialog.FileName = "Динамическая характеристика автомобиля " + txtCarModel.Text + " " + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx";
@@ -703,6 +819,8 @@ namespace VehicleTractionCharacteristicUi
                     FileInfo file = new FileInfo(saveFileDialog.FileName);
                     ExcelFile.SaveAs(file);
                 }
+
+                #endregion
             }
         }
 
