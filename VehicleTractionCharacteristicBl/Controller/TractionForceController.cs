@@ -5,7 +5,9 @@ namespace VehicleTractionCharacteristicBl.Controller
 {
     public class TractionForceController
     {
-        double TransferBoxGearRatio { get; }
+        double TransferBoxTopGearRatio { get; }
+
+        double TransferBoxLowerGearRatio { get; }
 
         double FinalDriveRatio { get; }
 
@@ -22,14 +24,16 @@ namespace VehicleTractionCharacteristicBl.Controller
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="transferBoxGearRatio"> Transfer box gear ratio. </param>
+        /// <param name="transferBoxTopGearRatio"> Transfer box top gear ratio. </param>
+        /// <param name="transferBoxLowerGearRatio"> Transfer box lower gear ratio. </param>
         /// <param name="finalDriveRatio"> Final drive ratio. </param>
         /// <param name="coefficientOfTransmissionEfficiency"> Coefficient of transmission efficiency. </param>
         /// <param name="wheelRadius"> Wheel radius. </param>
         /// <param name="engine"> Vehicle engine. </param>
         /// <param name="gears"> Vehicle gears. </param>
         /// <param name="speed"> Vehicle speed characteristic. </param>
-        public TractionForceController(double transferBoxGearRatio,
+        public TractionForceController(double transferBoxTopGearRatio,
+                                       double transferBoxLowerGearRatio,
                                        double finalDriveRatio,
                                        double coefficientOfTransmissionEfficiency,
                                        double wheelRadius,
@@ -37,7 +41,8 @@ namespace VehicleTractionCharacteristicBl.Controller
                                        List<Gear> gears,
                                        List<Speed> speed)
         {
-            TransferBoxGearRatio = transferBoxGearRatio;
+            TransferBoxTopGearRatio = transferBoxTopGearRatio;
+            TransferBoxLowerGearRatio = transferBoxLowerGearRatio;
             FinalDriveRatio = finalDriveRatio;
             CoefficientOfTransmissionEfficiency = coefficientOfTransmissionEfficiency;
             WheelRadius = wheelRadius;
@@ -54,6 +59,18 @@ namespace VehicleTractionCharacteristicBl.Controller
         {
             List<TractionForce> tractionForceCharacteristic = new List<TractionForce>();
 
+            if (!(TransferBoxTopGearRatio == 1 && TransferBoxLowerGearRatio == 1))
+            {
+                for (int i = 0; i < Engine.Count; i++)
+                {
+                    tractionForceCharacteristic.Add(new TractionForce
+                    {
+                        GearNumber = 0,
+                        TractionForceValue = ((Engine[i].Torque * Gears[0].GearRatio * TransferBoxLowerGearRatio * FinalDriveRatio * CoefficientOfTransmissionEfficiency) / (WheelRadius))
+                    });
+                }
+            }
+
             for (int i = 0; i < Gears.Count; i++)
             {
                 for (int j = 0; j < Engine.Count; j++)
@@ -61,7 +78,7 @@ namespace VehicleTractionCharacteristicBl.Controller
                     tractionForceCharacteristic.Add(new TractionForce
                     {
                         GearNumber = Gears[i].GearNumber,
-                        TractionForceValue = ((Engine[j].Torque * Gears[i].GearRatio * TransferBoxGearRatio * FinalDriveRatio * CoefficientOfTransmissionEfficiency)/(WheelRadius))
+                        TractionForceValue = ((Engine[j].Torque * Gears[i].GearRatio * TransferBoxTopGearRatio * FinalDriveRatio * CoefficientOfTransmissionEfficiency)/(WheelRadius))
                     });
                 }
             }
