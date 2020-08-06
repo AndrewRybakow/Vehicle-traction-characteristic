@@ -537,7 +537,7 @@ namespace VehicleTractionCharacteristicUi
 
         private void CalculateDynamicFactorCharacterisctic()
         {
-            DynamicFactorController dynamicFactorCharacteristic = new DynamicFactorController(Convert.ToDouble(txtWeightOnWheels.Text),
+            DynamicFactorController dynamicFactorCharacteristic = new DynamicFactorController(Convert.ToDouble(txtVehicleWeight.Text),
                                                                                                   Convert.ToDouble(txtDragCoefficient.Text),
                                                                                                   Convert.ToDouble(txtAirDensity.Text),
                                                                                                   Convert.ToDouble(txtProjectionHeight.Text),

@@ -8,7 +8,7 @@ namespace VehicleTractionCharacteristicBl.Controller
     {
         double AirDensity { get; }
 
-        double WeightOnDriveWheels { get; }
+        double VehicleWeight { get; }
 
         double DragCoefficient { get; }
 
@@ -19,14 +19,14 @@ namespace VehicleTractionCharacteristicBl.Controller
         /// <summary>
         /// Constructor.
         /// </summary>
-        /// <param name="weightOnDriveWheels"> Weight on drive wheels. </param>
+        /// <param name="vehicleWeight"> Vehicle weight. </param>
         /// <param name="dragCoefficient"> Drag coefficient. </param>
         /// <param name="airDensity"> Air density. </param>
         /// <param name="projectionHeight"> Projection height. </param>
         /// <param name="projectionWidth"> Projection widtch. </param>
         /// <param name="fillingCoefficient"> Filling coefficient. </param>
         /// <param name="tractionForce"> Vehicle traction force. </param>
-        public DynamicFactorController(double weightOnDriveWheels,
+        public DynamicFactorController(double vehicleWeight,
                                        double dragCoefficient,
                                        double airDensity,
                                        double projectionHeight,
@@ -34,7 +34,7 @@ namespace VehicleTractionCharacteristicBl.Controller
                                        double fillingCoefficient,
                                        List<TractionForce> tractionForce)
         {
-            WeightOnDriveWheels = weightOnDriveWheels;
+            VehicleWeight = vehicleWeight;
             DragCoefficient = dragCoefficient;
             AirDensity = airDensity;
             ProjectionArea = projectionHeight * projectionWidth * fillingCoefficient;
@@ -55,7 +55,7 @@ namespace VehicleTractionCharacteristicBl.Controller
                 {
                     GearNumber = TractionForce[i].GearNumber,
                     Speed = TractionForce[i].Speed,
-                    DynamicFactorValue = ((TractionForce[i].TractionForceValue - (0.5 * DragCoefficient * AirDensity * ProjectionArea * Math.Pow((TractionForce[i].Speed / 3.6), 2))) / (WeightOnDriveWheels)) * 100
+                    DynamicFactorValue = ((TractionForce[i].TractionForceValue - (0.5 * DragCoefficient * AirDensity * ProjectionArea * Math.Pow((TractionForce[i].Speed / 3.6), 2))) / (VehicleWeight)) * 100
                 });
             }
 
