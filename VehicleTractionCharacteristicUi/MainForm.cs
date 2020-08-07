@@ -28,6 +28,7 @@ namespace VehicleTractionCharacteristicUi
             GetGearsOfGearbox();
 
             CalculateSpeedCharacteristic();
+            CalculateRollingResistanceForceCharacteristic();
 
             CalculateTractionForceCharacteristic();
             BuildTractionForceCharacteristicGraph();
@@ -241,6 +242,15 @@ namespace VehicleTractionCharacteristicUi
                                                           Vehicle.Gears);
 
             Vehicle.Speed = speed.Calculate();
+        }
+
+        private void CalculateRollingResistanceForceCharacteristic()
+        {
+            RollingResistanceForceController rollingResistanceForce = new RollingResistanceForceController(Convert.ToDouble(txtRollingResistanceCoefficient.Text),
+                                                                                                               Convert.ToDouble(txtVehicleWeight.Text),
+                                                                                                               Vehicle.Speed);
+
+            Vehicle.RollingResistanceForce = rollingResistanceForce.Calculate();
         }
 
 

@@ -15,5 +15,7 @@ namespace VehicleTractionCharacteristicBl.Model
         public static List<DynamicFactor> DynamicFactor = new List<DynamicFactor>();
 
         public static List<Acceleration> Acceleration = new List<Acceleration>();
+
+        public static List<RollingResistanceForce> RollingResistanceForce = new List<RollingResistanceForce>();
     }
 }
