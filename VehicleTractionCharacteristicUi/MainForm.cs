@@ -33,6 +33,8 @@ namespace VehicleTractionCharacteristicUi
             CalculateTractionForceCharacteristic();
             BuildTractionForceCharacteristicGraph();
 
+            BuildRollingResistanceForceCharacteristicGraph(chrtTractionForce);
+
             CalculateDynamicFactorCharacterisctic();
             BuildDynamicFactorCharacteristicGraph();
 
@@ -244,6 +246,7 @@ namespace VehicleTractionCharacteristicUi
             Vehicle.Speed = speed.Calculate();
         }
 
+
         private void CalculateRollingResistanceForceCharacteristic()
         {
             RollingResistanceForceController rollingResistanceForce = new RollingResistanceForceController(Convert.ToDouble(txtRollingResistanceCoefficient.Text),
@@ -251,6 +254,35 @@ namespace VehicleTractionCharacteristicUi
                                                                                                                Vehicle.Speed);
 
             Vehicle.RollingResistanceForce = rollingResistanceForce.Calculate();
+        }
+
+        private void BuildRollingResistanceForceCharacteristicGraph(Chart chart)
+        {
+            // Add series to chart
+
+            chart.Series.Add(new Series
+            {
+                Name = "Rolling resistance",
+                ChartType = SeriesChartType.Spline,
+                Color = Color.Black,
+                BorderWidth = 1
+            });
+
+            // Get points
+
+            List<RollingResistanceForce> list = (from rollingResistanceForce in Vehicle.RollingResistanceForce
+                                                 select new RollingResistanceForce
+                                                 {
+                                                     Speed = rollingResistanceForce.Speed,
+                                                     RollingResistanceForcesValue = rollingResistanceForce.RollingResistanceForcesValue / 1000
+                                                 }).ToList();
+
+            // Add points to series
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                chart.Series["Rolling resistance"].Points.AddXY(list[i].Speed, list[i].RollingResistanceForcesValue);
+            }
         }
 
 

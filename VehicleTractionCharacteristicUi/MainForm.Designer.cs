@@ -1207,6 +1207,7 @@
             // 
             chartArea4.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
             chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea4.AxisX.Minimum = 0D;
             chartArea4.AxisX.MinorGrid.Enabled = true;
             chartArea4.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
             chartArea4.AxisX.Title = "Скорость, км/ч";
@@ -1331,7 +1332,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1242, 641);
+            this.ClientSize = new System.Drawing.Size(1259, 641);
             this.Controls.Add(this.grpAccelerationCharacteristic);
             this.Controls.Add(this.grpDynamicCharacteristic);
             this.Controls.Add(this.grpTractionCharacteristic);
