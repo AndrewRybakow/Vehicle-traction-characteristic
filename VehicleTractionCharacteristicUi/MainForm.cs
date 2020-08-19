@@ -35,6 +35,7 @@ namespace VehicleTractionCharacteristicUi
             BuildTractionForceCharacteristicGraph();
 
             BuildRollingResistanceForceCharacteristicGraph(chrtTractionForce);
+            BuildAirResistanceForceCharacteristicGraph(chrtTractionForce);
 
             CalculateDynamicFactorCharacterisctic();
             BuildDynamicFactorCharacteristicGraph();
@@ -297,6 +298,35 @@ namespace VehicleTractionCharacteristicUi
                                                                                                    Vehicle.Speed);
 
             Vehicle.AirResistanceForce = airResistanceForce.Calculate();
+        }
+
+        private void BuildAirResistanceForceCharacteristicGraph(Chart chart)
+        {
+            // Add series to chart
+
+            chart.Series.Add(new Series
+            {
+                Name = "Air resistance",
+                ChartType = SeriesChartType.Spline,
+                Color = Color.Blue,
+                BorderWidth = 1
+            });
+
+            // Get points
+
+            List<AirResistanceForce> list = (from airResistanceForce in Vehicle.AirResistanceForce
+                                             select new AirResistanceForce
+                                             {
+                                                 Speed = airResistanceForce.Speed,
+                                                 AirResistanceForceValue = airResistanceForce.AirResistanceForceValue / 1000
+                                             }).ToList();
+
+            // Add points to series
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                chart.Series["Air resistance"].Points.AddXY(list[i].Speed, list[i].AirResistanceForceValue);
+            }
         }
 
 
