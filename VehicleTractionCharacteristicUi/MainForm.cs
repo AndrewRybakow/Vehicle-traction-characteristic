@@ -29,6 +29,7 @@ namespace VehicleTractionCharacteristicUi
 
             CalculateSpeedCharacteristic();
             CalculateRollingResistanceForceCharacteristic();
+            CalculateAirResistanceForceCharacteristic();
 
             CalculateTractionForceCharacteristic();
             BuildTractionForceCharacteristicGraph();
@@ -283,6 +284,19 @@ namespace VehicleTractionCharacteristicUi
             {
                 chart.Series["Rolling resistance"].Points.AddXY(list[i].Speed, list[i].RollingResistanceForcesValue);
             }
+        }
+
+
+        private void CalculateAirResistanceForceCharacteristic()
+        {
+            AirResistanceForceController airResistanceForce = new AirResistanceForceController(Convert.ToDouble(txtDragCoefficient.Text),
+                                                                                                   Convert.ToDouble(txtAirDensity.Text),
+                                                                                                   Convert.ToDouble(txtProjectionHeight.Text),
+                                                                                                   Convert.ToDouble(txtProjectionWidth.Text),
+                                                                                                   Convert.ToDouble(txtFillingCoefficient.Text),
+                                                                                                   Vehicle.Speed);
+
+            Vehicle.AirResistanceForce = airResistanceForce.Calculate();
         }
 
 

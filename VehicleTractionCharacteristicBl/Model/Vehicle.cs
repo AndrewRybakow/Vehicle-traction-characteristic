@@ -17,5 +17,7 @@ namespace VehicleTractionCharacteristicBl.Model
         public static List<Acceleration> Acceleration = new List<Acceleration>();
 
         public static List<RollingResistanceForce> RollingResistanceForce = new List<RollingResistanceForce>();
+
+        public static List<AirResistanceForce> AirResistanceForce = new List<AirResistanceForce>();
     }
 }
