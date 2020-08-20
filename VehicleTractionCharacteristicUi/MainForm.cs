@@ -34,10 +34,10 @@ namespace VehicleTractionCharacteristicUi
             CalculateTractionForceCharacteristic();
             BuildTractionForceCharacteristicGraph();
 
-            BuildRollingResistanceForceCharacteristicGraph(chrtTractionForce);
-            BuildAirResistanceForceCharacteristicGraph(chrtTractionForce);
+            BuildRollingResistanceForceCharacteristicFunction(chrtTractionForce, 1, 0.001);
+            BuildAirResistanceForceCharacteristicFunction(chrtTractionForce, 1, 0.001);
 
-            BuildResistanceForcesCharacteristicGraph(chrtTractionForce);
+            BuildResistanceForcesCharacteristicFunction(chrtTractionForce, 1, 0.001);
 
             CalculateDynamicFactorCharacterisctic();
             BuildDynamicFactorCharacteristicGraph();
@@ -260,7 +260,13 @@ namespace VehicleTractionCharacteristicUi
             Vehicle.RollingResistanceForce = rollingResistanceForce.Calculate();
         }
 
-        private void BuildRollingResistanceForceCharacteristicGraph(Chart chart)
+        /// <summary>
+        /// Build rolling resistance force characteristic function.
+        /// </summary>
+        /// <param name="chart"> Chart for a function. </param>
+        /// <param name="speedMultiplier"> Multiplier for speed axis. </param>
+        /// <param name="forceMultiplier"> Multiplier for force axis. </param>
+        private void BuildRollingResistanceForceCharacteristicFunction(Chart chart, double speedMultiplier, double forceMultiplier)
         {
             // Add series to chart
 
@@ -277,8 +283,8 @@ namespace VehicleTractionCharacteristicUi
             List<RollingResistanceForce> list = (from rollingResistanceForce in Vehicle.RollingResistanceForce
                                                  select new RollingResistanceForce
                                                  {
-                                                     Speed = rollingResistanceForce.Speed,
-                                                     RollingResistanceForcesValue = rollingResistanceForce.RollingResistanceForcesValue / 1000
+                                                     Speed = rollingResistanceForce.Speed * speedMultiplier,
+                                                     RollingResistanceForcesValue = rollingResistanceForce.RollingResistanceForcesValue * forceMultiplier
                                                  }).ToList();
 
             // Add points to series
@@ -302,7 +308,13 @@ namespace VehicleTractionCharacteristicUi
             Vehicle.AirResistanceForce = airResistanceForce.Calculate();
         }
 
-        private void BuildAirResistanceForceCharacteristicGraph(Chart chart)
+        /// <summary>
+        /// Build air resistance force characteristic function.
+        /// </summary>
+        /// <param name="chart"> Chart for a function. </param>
+        /// <param name="speedMultiplier"> Multiplier for speed axis. </param>
+        /// <param name="forceMultiplier"> Multiplier for force axis. </param>
+        private void BuildAirResistanceForceCharacteristicFunction(Chart chart, double speedMultiplier, double forceMultiplier)
         {
             // Add series to chart
 
@@ -319,8 +331,8 @@ namespace VehicleTractionCharacteristicUi
             List<AirResistanceForce> list = (from airResistanceForce in Vehicle.AirResistanceForce
                                              select new AirResistanceForce
                                              {
-                                                 Speed = airResistanceForce.Speed,
-                                                 AirResistanceForceValue = airResistanceForce.AirResistanceForceValue / 1000
+                                                 Speed = airResistanceForce.Speed * speedMultiplier,
+                                                 AirResistanceForceValue = airResistanceForce.AirResistanceForceValue * forceMultiplier
                                              }).ToList();
 
             // Add points to series
@@ -332,7 +344,13 @@ namespace VehicleTractionCharacteristicUi
         }
 
 
-        private void BuildResistanceForcesCharacteristicGraph(Chart chart)
+        /// <summary>
+        /// Build resistance forces characteristic function.
+        /// </summary>
+        /// <param name="chart"> Chart for a function. </param>
+        /// <param name="speedMultiplier"> Multiplier for speed axis. </param>
+        /// <param name="forceMultiplier"> Multiplier for force axis. </param>
+        private void BuildResistanceForcesCharacteristicFunction(Chart chart, double speedMultiplier, double forceMultiplier)
         {
             // Add series to chart
 
@@ -348,7 +366,7 @@ namespace VehicleTractionCharacteristicUi
 
             for (int i = 0; i < Vehicle.AirResistanceForce.Count; i++)
             {
-                chart.Series["Rolling + Air"].Points.AddXY(Vehicle.AirResistanceForce[i].Speed, (Vehicle.AirResistanceForce[i].AirResistanceForceValue + Vehicle.RollingResistanceForce[i].RollingResistanceForcesValue) / 1000);
+                chart.Series["Rolling + Air"].Points.AddXY(Vehicle.AirResistanceForce[i].Speed * speedMultiplier, (Vehicle.AirResistanceForce[i].AirResistanceForceValue + Vehicle.RollingResistanceForce[i].RollingResistanceForcesValue) * forceMultiplier);
             }
         }
 
