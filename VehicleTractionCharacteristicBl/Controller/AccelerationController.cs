@@ -112,7 +112,7 @@ namespace VehicleTractionCharacteristicBl.Controller
                 accelerationCharacteristic.Add(new Acceleration
                 {
                     GearNumber = dynamicFactorByGearInGearbox[j].GearNumber,
-                    Speed = DynamicFactor[j].Speed,
+                    Speed = dynamicFactorByGearInGearbox[j].Speed,
                     AccelerationValue = (((dynamicFactorByGearInGearbox[j].DynamicFactorValue / 100) - CoefficientOfRollingResistance(dynamicFactorByGearInGearbox[j].Speed)) / (CoefficientOfInertia(Gears[dynamicFactorByGearInGearbox[j].GearNumber - 1].GearRatio))) * 9.81,
                     ReciprocalAccelerationValue = 1 / ((((dynamicFactorByGearInGearbox[j].DynamicFactorValue / 100) - CoefficientOfRollingResistance(dynamicFactorByGearInGearbox[j].Speed)) / (CoefficientOfInertia(Gears[dynamicFactorByGearInGearbox[j].GearNumber - 1].GearRatio))) * 9.81)
                 });
