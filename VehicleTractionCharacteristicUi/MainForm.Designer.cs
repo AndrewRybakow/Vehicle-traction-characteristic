@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea25 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend25 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea26 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend26 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea27 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend27 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea28 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend28 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea29 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend29 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea30 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend30 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.grpModelStep = new System.Windows.Forms.GroupBox();
             this.tlpModelStep = new System.Windows.Forms.TableLayoutPanel();
             this.lblCarModel = new System.Windows.Forms.Label();
@@ -139,6 +139,7 @@
             this.grpAccelerationCharacteristic = new System.Windows.Forms.GroupBox();
             this.chrtAccelerationCharacteristic = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnSaveExcelAccelerationCharacteristic = new System.Windows.Forms.Button();
+            this.btnSaveReport = new System.Windows.Forms.Button();
             this.grpModelStep.SuspendLayout();
             this.tlpModelStep.SuspendLayout();
             this.grpInitialData.SuspendLayout();
@@ -180,25 +181,26 @@
             this.grpModelStep.Controls.Add(this.tlpModelStep);
             this.grpModelStep.Location = new System.Drawing.Point(10, 12);
             this.grpModelStep.Name = "grpModelStep";
-            this.grpModelStep.Size = new System.Drawing.Size(299, 76);
+            this.grpModelStep.Size = new System.Drawing.Size(510, 44);
             this.grpModelStep.TabIndex = 8;
             this.grpModelStep.TabStop = false;
             // 
             // tlpModelStep
             // 
-            this.tlpModelStep.ColumnCount = 2;
-            this.tlpModelStep.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.28986F));
-            this.tlpModelStep.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.71014F));
+            this.tlpModelStep.ColumnCount = 4;
+            this.tlpModelStep.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
+            this.tlpModelStep.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178F));
+            this.tlpModelStep.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tlpModelStep.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tlpModelStep.Controls.Add(this.lblCarModel, 0, 0);
-            this.tlpModelStep.Controls.Add(this.lblStep, 0, 1);
             this.tlpModelStep.Controls.Add(this.txtCarModel, 1, 0);
-            this.tlpModelStep.Controls.Add(this.txtStep, 1, 1);
+            this.tlpModelStep.Controls.Add(this.lblStep, 2, 0);
+            this.tlpModelStep.Controls.Add(this.txtStep, 3, 0);
             this.tlpModelStep.Location = new System.Drawing.Point(8, 12);
             this.tlpModelStep.Name = "tlpModelStep";
-            this.tlpModelStep.RowCount = 2;
-            this.tlpModelStep.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpModelStep.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpModelStep.Size = new System.Drawing.Size(276, 60);
+            this.tlpModelStep.RowCount = 1;
+            this.tlpModelStep.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpModelStep.Size = new System.Drawing.Size(494, 28);
             this.tlpModelStep.TabIndex = 2;
             // 
             // lblCarModel
@@ -214,7 +216,7 @@
             // lblStep
             // 
             this.lblStep.AutoSize = true;
-            this.lblStep.Location = new System.Drawing.Point(3, 35);
+            this.lblStep.Location = new System.Drawing.Point(305, 5);
             this.lblStep.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblStep.Name = "lblStep";
             this.lblStep.Size = new System.Drawing.Size(116, 13);
@@ -223,14 +225,14 @@
             // 
             // txtCarModel
             // 
-            this.txtCarModel.Location = new System.Drawing.Point(128, 3);
+            this.txtCarModel.Location = new System.Drawing.Point(127, 3);
             this.txtCarModel.Name = "txtCarModel";
             this.txtCarModel.Size = new System.Drawing.Size(145, 20);
             this.txtCarModel.TabIndex = 2;
             // 
             // txtStep
             // 
-            this.txtStep.Location = new System.Drawing.Point(128, 33);
+            this.txtStep.Location = new System.Drawing.Point(427, 3);
             this.txtStep.Name = "txtStep";
             this.txtStep.Size = new System.Drawing.Size(61, 20);
             this.txtStep.TabIndex = 3;
@@ -238,6 +240,7 @@
             // 
             // grpInitialData
             // 
+            this.grpInitialData.Controls.Add(this.btnSaveReport);
             this.grpInitialData.Controls.Add(this.grpEnvironmentalCharacteristics);
             this.grpInitialData.Controls.Add(this.grpMomentOfInertia);
             this.grpInitialData.Controls.Add(this.grpProjectionArea);
@@ -247,7 +250,7 @@
             this.grpInitialData.Controls.Add(this.grpVehicleCharacteristic);
             this.grpInitialData.Controls.Add(this.btnCalculate);
             this.grpInitialData.Controls.Add(this.grpEngineCharacteristic);
-            this.grpInitialData.Location = new System.Drawing.Point(10, 94);
+            this.grpInitialData.Location = new System.Drawing.Point(10, 59);
             this.grpInitialData.Name = "grpInitialData";
             this.grpInitialData.Size = new System.Drawing.Size(1188, 466);
             this.grpInitialData.TabIndex = 9;
@@ -811,7 +814,7 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(1107, 434);
+            this.btnCalculate.Location = new System.Drawing.Point(967, 434);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(75, 23);
             this.btnCalculate.TabIndex = 7;
@@ -1012,7 +1015,7 @@
             // 
             this.grpExternalCharacteristic.Controls.Add(this.btnSaveExcelExternalCharacteristic);
             this.grpExternalCharacteristic.Controls.Add(this.tabExternalCharacteristic);
-            this.grpExternalCharacteristic.Location = new System.Drawing.Point(10, 571);
+            this.grpExternalCharacteristic.Location = new System.Drawing.Point(10, 536);
             this.grpExternalCharacteristic.Name = "grpExternalCharacteristic";
             this.grpExternalCharacteristic.Size = new System.Drawing.Size(560, 468);
             this.grpExternalCharacteristic.TabIndex = 10;
@@ -1054,36 +1057,36 @@
             // 
             // chrtPower
             // 
-            chartArea1.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea1.AxisX.IsStartedFromZero = false;
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisX.MinorGrid.Enabled = true;
-            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisX.Title = "Частота вращения коленчатого вала, об/мин";
-            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea1.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea1.AxisY.IsStartedFromZero = false;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.MinorGrid.Enabled = true;
-            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.Title = "Мощность, кВт";
-            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea1.Name = "ChartArea1";
-            this.chrtPower.ChartAreas.Add(chartArea1);
+            chartArea25.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea25.AxisX.IsStartedFromZero = false;
+            chartArea25.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea25.AxisX.MinorGrid.Enabled = true;
+            chartArea25.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea25.AxisX.Title = "Частота вращения коленчатого вала, об/мин";
+            chartArea25.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea25.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea25.AxisY.IsStartedFromZero = false;
+            chartArea25.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea25.AxisY.MinorGrid.Enabled = true;
+            chartArea25.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea25.AxisY.Title = "Мощность, кВт";
+            chartArea25.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea25.Name = "ChartArea1";
+            this.chrtPower.ChartAreas.Add(chartArea25);
             this.chrtPower.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chrtPower.Legends.Add(legend1);
+            legend25.Name = "Legend1";
+            this.chrtPower.Legends.Add(legend25);
             this.chrtPower.Location = new System.Drawing.Point(3, 3);
             this.chrtPower.Name = "chrtPower";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.IsVisibleInLegend = false;
-            series1.Legend = "Legend1";
-            series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series1.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series1.Name = "Power";
-            this.chrtPower.Series.Add(series1);
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series13.IsVisibleInLegend = false;
+            series13.Legend = "Legend1";
+            series13.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series13.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series13.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series13.Name = "Power";
+            this.chrtPower.Series.Add(series13);
             this.chrtPower.Size = new System.Drawing.Size(540, 380);
             this.chrtPower.TabIndex = 0;
             this.chrtPower.Text = "chart1";
@@ -1101,36 +1104,36 @@
             // 
             // chrtTorque
             // 
-            chartArea2.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea2.AxisX.IsStartedFromZero = false;
-            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea2.AxisX.MinorGrid.Enabled = true;
-            chartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea2.AxisX.Title = "Частота вращения коленчатого вала, об/мин";
-            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea2.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea2.AxisY.IsStartedFromZero = false;
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea2.AxisY.MinorGrid.Enabled = true;
-            chartArea2.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea2.AxisY.Title = "Момент, Нм";
-            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea2.Name = "ChartArea1";
-            this.chrtTorque.ChartAreas.Add(chartArea2);
+            chartArea26.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea26.AxisX.IsStartedFromZero = false;
+            chartArea26.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea26.AxisX.MinorGrid.Enabled = true;
+            chartArea26.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea26.AxisX.Title = "Частота вращения коленчатого вала, об/мин";
+            chartArea26.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea26.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea26.AxisY.IsStartedFromZero = false;
+            chartArea26.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea26.AxisY.MinorGrid.Enabled = true;
+            chartArea26.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea26.AxisY.Title = "Момент, Нм";
+            chartArea26.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea26.Name = "ChartArea1";
+            this.chrtTorque.ChartAreas.Add(chartArea26);
             this.chrtTorque.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chrtTorque.Legends.Add(legend2);
+            legend26.Name = "Legend1";
+            this.chrtTorque.Legends.Add(legend26);
             this.chrtTorque.Location = new System.Drawing.Point(3, 3);
             this.chrtTorque.Name = "chrtTorque";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.IsVisibleInLegend = false;
-            series2.Legend = "Legend1";
-            series2.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series2.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series2.Name = "Torque";
-            this.chrtTorque.Series.Add(series2);
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series14.IsVisibleInLegend = false;
+            series14.Legend = "Legend1";
+            series14.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series14.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series14.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series14.Name = "Torque";
+            this.chrtTorque.Series.Add(series14);
             this.chrtTorque.Size = new System.Drawing.Size(540, 380);
             this.chrtTorque.TabIndex = 0;
             this.chrtTorque.Text = "chart1";
@@ -1148,36 +1151,36 @@
             // 
             // chrtConsumption
             // 
-            chartArea3.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea3.AxisX.IsStartedFromZero = false;
-            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea3.AxisX.MinorGrid.Enabled = true;
-            chartArea3.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea3.AxisX.Title = "Частота вращения коленчатого вала, об/мин";
-            chartArea3.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea3.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea3.AxisY.IsStartedFromZero = false;
-            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea3.AxisY.MinorGrid.Enabled = true;
-            chartArea3.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea3.AxisY.Title = "Удельный расход топлива, г/кВтч";
-            chartArea3.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea3.Name = "ChartArea1";
-            this.chrtConsumption.ChartAreas.Add(chartArea3);
+            chartArea27.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea27.AxisX.IsStartedFromZero = false;
+            chartArea27.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea27.AxisX.MinorGrid.Enabled = true;
+            chartArea27.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea27.AxisX.Title = "Частота вращения коленчатого вала, об/мин";
+            chartArea27.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea27.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea27.AxisY.IsStartedFromZero = false;
+            chartArea27.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea27.AxisY.MinorGrid.Enabled = true;
+            chartArea27.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea27.AxisY.Title = "Удельный расход топлива, г/кВтч";
+            chartArea27.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea27.Name = "ChartArea1";
+            this.chrtConsumption.ChartAreas.Add(chartArea27);
             this.chrtConsumption.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.chrtConsumption.Legends.Add(legend3);
+            legend27.Name = "Legend1";
+            this.chrtConsumption.Legends.Add(legend27);
             this.chrtConsumption.Location = new System.Drawing.Point(3, 3);
             this.chrtConsumption.Name = "chrtConsumption";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.IsVisibleInLegend = false;
-            series3.Legend = "Legend1";
-            series3.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series3.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series3.Name = "Consumption";
-            this.chrtConsumption.Series.Add(series3);
+            series15.ChartArea = "ChartArea1";
+            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series15.IsVisibleInLegend = false;
+            series15.Legend = "Legend1";
+            series15.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series15.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series15.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series15.Name = "Consumption";
+            this.chrtConsumption.Series.Add(series15);
             this.chrtConsumption.Size = new System.Drawing.Size(540, 380);
             this.chrtConsumption.TabIndex = 0;
             this.chrtConsumption.Text = "chart1";
@@ -1186,7 +1189,7 @@
             // 
             this.grpTractionCharacteristic.Controls.Add(this.btnSaveExcelTractionCharacteristic);
             this.grpTractionCharacteristic.Controls.Add(this.chrtTractionForce);
-            this.grpTractionCharacteristic.Location = new System.Drawing.Point(638, 571);
+            this.grpTractionCharacteristic.Location = new System.Drawing.Point(638, 536);
             this.grpTractionCharacteristic.Name = "grpTractionCharacteristic";
             this.grpTractionCharacteristic.Size = new System.Drawing.Size(560, 468);
             this.grpTractionCharacteristic.TabIndex = 11;
@@ -1205,26 +1208,26 @@
             // 
             // chrtTractionForce
             // 
-            chartArea4.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea4.AxisX.Minimum = 0D;
-            chartArea4.AxisX.MinorGrid.Enabled = true;
-            chartArea4.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea4.AxisX.Title = "Скорость, км/ч";
-            chartArea4.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea4.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea4.AxisY.MinorGrid.Enabled = true;
-            chartArea4.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea4.AxisY.Title = "Сила тяги, кН";
-            chartArea4.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea4.Name = "ChartArea1";
-            this.chrtTractionForce.ChartAreas.Add(chartArea4);
+            chartArea28.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea28.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea28.AxisX.Minimum = 0D;
+            chartArea28.AxisX.MinorGrid.Enabled = true;
+            chartArea28.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea28.AxisX.Title = "Скорость, км/ч";
+            chartArea28.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea28.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea28.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea28.AxisY.MinorGrid.Enabled = true;
+            chartArea28.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea28.AxisY.Title = "Сила тяги, кН";
+            chartArea28.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea28.Name = "ChartArea1";
+            this.chrtTractionForce.ChartAreas.Add(chartArea28);
             this.chrtTractionForce.Dock = System.Windows.Forms.DockStyle.Top;
-            legend4.BorderColor = System.Drawing.Color.Black;
-            legend4.DockedToChartArea = "ChartArea1";
-            legend4.Name = "Legend1";
-            this.chrtTractionForce.Legends.Add(legend4);
+            legend28.BorderColor = System.Drawing.Color.Black;
+            legend28.DockedToChartArea = "ChartArea1";
+            legend28.Name = "Legend1";
+            this.chrtTractionForce.Legends.Add(legend28);
             this.chrtTractionForce.Location = new System.Drawing.Point(3, 16);
             this.chrtTractionForce.Name = "chrtTractionForce";
             this.chrtTractionForce.Size = new System.Drawing.Size(554, 408);
@@ -1235,7 +1238,7 @@
             // 
             this.grpDynamicCharacteristic.Controls.Add(this.btnSaveExcelDynamicCharacteristic);
             this.grpDynamicCharacteristic.Controls.Add(this.chrtDynamicCharacteristic);
-            this.grpDynamicCharacteristic.Location = new System.Drawing.Point(10, 1051);
+            this.grpDynamicCharacteristic.Location = new System.Drawing.Point(10, 1016);
             this.grpDynamicCharacteristic.Name = "grpDynamicCharacteristic";
             this.grpDynamicCharacteristic.Size = new System.Drawing.Size(560, 468);
             this.grpDynamicCharacteristic.TabIndex = 12;
@@ -1254,25 +1257,25 @@
             // 
             // chrtDynamicCharacteristic
             // 
-            chartArea5.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea5.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea5.AxisX.MinorGrid.Enabled = true;
-            chartArea5.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea5.AxisX.Title = "Скорость, км/ч";
-            chartArea5.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea5.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea5.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea5.AxisY.MinorGrid.Enabled = true;
-            chartArea5.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea5.AxisY.Title = "Динамический фактор, %";
-            chartArea5.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea5.Name = "ChartArea1";
-            this.chrtDynamicCharacteristic.ChartAreas.Add(chartArea5);
+            chartArea29.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea29.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea29.AxisX.MinorGrid.Enabled = true;
+            chartArea29.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea29.AxisX.Title = "Скорость, км/ч";
+            chartArea29.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea29.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea29.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea29.AxisY.MinorGrid.Enabled = true;
+            chartArea29.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea29.AxisY.Title = "Динамический фактор, %";
+            chartArea29.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea29.Name = "ChartArea1";
+            this.chrtDynamicCharacteristic.ChartAreas.Add(chartArea29);
             this.chrtDynamicCharacteristic.Dock = System.Windows.Forms.DockStyle.Top;
-            legend5.BorderColor = System.Drawing.Color.Black;
-            legend5.DockedToChartArea = "ChartArea1";
-            legend5.Name = "Legend1";
-            this.chrtDynamicCharacteristic.Legends.Add(legend5);
+            legend29.BorderColor = System.Drawing.Color.Black;
+            legend29.DockedToChartArea = "ChartArea1";
+            legend29.Name = "Legend1";
+            this.chrtDynamicCharacteristic.Legends.Add(legend29);
             this.chrtDynamicCharacteristic.Location = new System.Drawing.Point(3, 16);
             this.chrtDynamicCharacteristic.Name = "chrtDynamicCharacteristic";
             this.chrtDynamicCharacteristic.Size = new System.Drawing.Size(554, 408);
@@ -1283,7 +1286,7 @@
             // 
             this.grpAccelerationCharacteristic.Controls.Add(this.chrtAccelerationCharacteristic);
             this.grpAccelerationCharacteristic.Controls.Add(this.btnSaveExcelAccelerationCharacteristic);
-            this.grpAccelerationCharacteristic.Location = new System.Drawing.Point(638, 1051);
+            this.grpAccelerationCharacteristic.Location = new System.Drawing.Point(638, 1016);
             this.grpAccelerationCharacteristic.Name = "grpAccelerationCharacteristic";
             this.grpAccelerationCharacteristic.Size = new System.Drawing.Size(560, 468);
             this.grpAccelerationCharacteristic.TabIndex = 13;
@@ -1292,25 +1295,25 @@
             // 
             // chrtAccelerationCharacteristic
             // 
-            chartArea6.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea6.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea6.AxisX.MinorGrid.Enabled = true;
-            chartArea6.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea6.AxisX.Title = "Скорость, км/ч";
-            chartArea6.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea6.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
-            chartArea6.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea6.AxisY.MinorGrid.Enabled = true;
-            chartArea6.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea6.AxisY.Title = "Ускорение, м/с^2";
-            chartArea6.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            chartArea6.Name = "ChartArea1";
-            this.chrtAccelerationCharacteristic.ChartAreas.Add(chartArea6);
+            chartArea30.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea30.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea30.AxisX.MinorGrid.Enabled = true;
+            chartArea30.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea30.AxisX.Title = "Скорость, км/ч";
+            chartArea30.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea30.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.SharpTriangle;
+            chartArea30.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea30.AxisY.MinorGrid.Enabled = true;
+            chartArea30.AxisY.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea30.AxisY.Title = "Ускорение, м/с^2";
+            chartArea30.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            chartArea30.Name = "ChartArea1";
+            this.chrtAccelerationCharacteristic.ChartAreas.Add(chartArea30);
             this.chrtAccelerationCharacteristic.Dock = System.Windows.Forms.DockStyle.Top;
-            legend6.BorderColor = System.Drawing.Color.Black;
-            legend6.DockedToChartArea = "ChartArea1";
-            legend6.Name = "Legend1";
-            this.chrtAccelerationCharacteristic.Legends.Add(legend6);
+            legend30.BorderColor = System.Drawing.Color.Black;
+            legend30.DockedToChartArea = "ChartArea1";
+            legend30.Name = "Legend1";
+            this.chrtAccelerationCharacteristic.Legends.Add(legend30);
             this.chrtAccelerationCharacteristic.Location = new System.Drawing.Point(3, 16);
             this.chrtAccelerationCharacteristic.Name = "chrtAccelerationCharacteristic";
             this.chrtAccelerationCharacteristic.Size = new System.Drawing.Size(554, 408);
@@ -1327,12 +1330,21 @@
             this.btnSaveExcelAccelerationCharacteristic.UseVisualStyleBackColor = true;
             this.btnSaveExcelAccelerationCharacteristic.Click += new System.EventHandler(this.btnSaveExcelAccelerationCharacteristic_Click);
             // 
+            // btnSaveReport
+            // 
+            this.btnSaveReport.Location = new System.Drawing.Point(1050, 434);
+            this.btnSaveReport.Name = "btnSaveReport";
+            this.btnSaveReport.Size = new System.Drawing.Size(101, 23);
+            this.btnSaveReport.TabIndex = 17;
+            this.btnSaveReport.Text = "Сохранить отчёт";
+            this.btnSaveReport.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1259, 641);
+            this.ClientSize = new System.Drawing.Size(1225, 641);
             this.Controls.Add(this.grpAccelerationCharacteristic);
             this.Controls.Add(this.grpDynamicCharacteristic);
             this.Controls.Add(this.grpTractionCharacteristic);
@@ -1487,6 +1499,7 @@
         private System.Windows.Forms.Button btnSaveExcelAccelerationCharacteristic;
         private System.Windows.Forms.Label lblAirDensity;
         private System.Windows.Forms.TextBox txtAirDensity;
+        private System.Windows.Forms.Button btnSaveReport;
     }
 }
 
