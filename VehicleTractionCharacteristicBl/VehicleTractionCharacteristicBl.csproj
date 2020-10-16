@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AccelerationController.cs" />
+    <Compile Include="Controller\AccelerationTimePathCharacteristicController.cs" />
     <Compile Include="Controller\AirResistanceForceController.cs" />
     <Compile Include="Controller\DynamicFactorController.cs" />
     <Compile Include="Controller\EngineController.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Controller\SpeedContoller.cs" />
     <Compile Include="Controller\TractionForceController.cs" />
     <Compile Include="Model\Acceleration.cs" />
+    <Compile Include="Model\AccelerationTimePathCharacteristic.cs" />
     <Compile Include="Model\AirResistanceForce.cs" />
     <Compile Include="Model\DynamicFactor.cs" />
     <Compile Include="Model\Engine.cs" />

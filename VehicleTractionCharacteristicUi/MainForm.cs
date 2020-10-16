@@ -44,6 +44,8 @@ namespace VehicleTractionCharacteristicUi
 
             CalculateAccelerationCharacterisctic();
             BuildAccelerationCharacteristicGraph();
+
+            CalculateAccelerationTimePathCharacteristic();
         }
 
         private void btnSaveReport_Click(object sender, EventArgs e)
@@ -1157,6 +1159,15 @@ namespace VehicleTractionCharacteristicUi
 
                 #endregion
             }
+        }
+
+
+        private void CalculateAccelerationTimePathCharacteristic()
+        {
+            var accelerationTimePathCharacteristic = new AccelerationTimePathCharacteristicController(Vehicle.Acceleration,
+                                                                                                      Vehicle.Gears);
+
+            Vehicle.AccelerationTimePathCharacteristic = accelerationTimePathCharacteristic.Calculate();
         }
 
 
